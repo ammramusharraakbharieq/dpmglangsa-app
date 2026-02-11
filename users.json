@@ -1,0 +1,26 @@
+{
+  "admin1": {
+    "password": "2ad305b66ea370037e963b36533b034e84dbb8a44fb7e78abe958e8e40605a37",
+    "role": "admin"
+  },
+  "admin2": {
+    "password": "d2b8f30e93ae53e6ca26c98c1f16272cbb1c48a9d8fb0230afb53558ed842b04",
+    "role": "admin"
+  },
+  "admin3": {
+    "password": "ae9fb233851ab092f7c96901da3801962f103bd66c509ef48e0b4c7121bc1e5f",
+    "role": "admin"
+  },
+  "ammra": {
+    "password": "cd9c9367342f74e119a0ee61175fed9fdc07978c65347a953f0e3af4aea8f33e",
+    "role": "viewer"
+  },
+  "edo": {
+    "password": "6950e850fa1bddd7376a7c3f332181ce31b5ca9d54f7e149af8e73e44768604f",
+    "role": "viewer"
+  },
+  "amrona": {
+    "password": "cd9c9367342f74e119a0ee61175fed9fdc07978c65347a953f0e3af4aea8f33e",
+    "role": "viewer"
+  }
+}

@@ -1,0 +1,71 @@
+================================================================================
+FILE 1: data_(camat,mukim,dan geuchik).xlsx
+================================================================================
+Sheet names: ['Sheet1']
+
+--- Sheet: Sheet1 ---
+Dimensi: 67 baris x 7 kolom
+
+Header dan beberapa baris data:
+  Row 0: ['NO', 'KECAMATAN', 'NAMA CAMAT', 'KEMUKIMAN', 'NAMA MUKIM', 'GAMPONG', 'NAMA GEUCHIK']
+  Row 1: ['1', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'BUKET MEDANG ARA', 'MUHAMMAD JAMIL, S.Kom.I']
+  Row 2: ['2', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'MATANG SEUTUI', 'IBRAHIM JAKFAR,SE']
+  Row 3: ['3', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'BUKET PULO', 'ZULHAMSYAH']
+  Row 4: ['4', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'MATANG PANYANG', 'RUDI IRAWAN']
+  Row 5: ['5', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'SIMPANG WIE', 'IBNU ABAS']
+  Row 6: ['6', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'BUKET RATA', 'MUSTAFA']
+  Row 7: ['7', 'LANGSA TIMUR', 'ANDRE ISVANI, SIP MAP', 'SEUNEUBOK ANTARA', 'MUSLEM Z', 'BUKET MEUTUAH', 'YASIR']
+
+================================================================================
+FILE 2: data_(geuchik kota langsa).xlsx
+================================================================================
+Sheet names: ['Sheet1']
+
+--- Sheet: Sheet1 ---
+Dimensi: 69 baris x 18 kolom
+
+Header dan beberapa baris data:
+  Row 0: ['PROVINSI', 'NaN', 'KABUPATEN/KOTA', 'NaN', 'KECAMATAN', 'NaN', 'DESA', 'NaN', 'NAMA\nLENGKAP', 'KELAHIRAN', 'NaN', 'NaN', 'JENIS\nKELAMIN', 'PENDIDIKAN', 'SK PENGANGKATAN', 'NaN', 'JABATAN', 'NO HP']
+  Row 1: ['NO', 'NAMA', 'NO', 'NAMA', 'NO', 'NAMA', 'NO', 'NAMA', 'NaN', 'TGL', 'BLN', 'THN', 'NaN', 'NaN', 'NOMOR', 'TANGGAL', 'NaN', 'NaN']
+  Row 2: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18']
+  Row 3: ['11', 'ACEH', '11.74', 'LANGSA', '11.74.01', 'LANGSA TIMUR', '11.74.01.2007', 'BUKET MEDANG ARA', 'MUHAMMAD JAMIL, S.Kom.I', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'PJ. KEPALA DESA', '085262187552']
+  Row 4: ['11', 'ACEH', '11.74', 'LANGSA', '11.74.01', 'LANGSA TIMUR', '11.74.01.2009', 'MATANG SEUTUI', 'IBRAHIM JAKFAR,SE', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'PJ. KEPALA DESA', '085270253703']
+  Row 5: ['11', 'ACEH', '11.74', 'LANGSA', '11.74.01', 'LANGSA TIMUR', '11.74.01.2010', 'BUKET PULO', 'ZULHAMSYAH', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'PJ. KEPALA DESA', '085260404679']
+  Row 6: ['11', 'ACEH', '11.74', 'LANGSA', '11.74.01', 'LANGSA TIMUR', '11.74.01.2011', 'MATANG PANYANG', 'RUDI IRAWAN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'KEPALA DESA', '085288526708']
+  Row 7: ['11', 'ACEH', '11.74', 'LANGSA', '11.74.01', 'LANGSA TIMUR', '11.74.01.2012', 'SIMPANG WIE', 'IBNU ABAS', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'KEPALA DESA', '085261721164']
+
+================================================================================
+FILE 3: data_(kepala desa & perangkat desa).xlsx
+================================================================================
+Sheet names: ['Sheet1']
+
+--- Sheet: Sheet1 ---
+Dimensi: 871 baris x 16 kolom
+
+Header dan beberapa baris data:
+  Row 0: ['DATA KEPALA DESA DAN PERA', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 1: ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 2: ['PROVINSI', 'NaN', 'KABUPATEN / KOTA', 'NaN', 'KECAMATAN', 'NaN', 'DESA', 'NaN', 'NaN', 'NaN', 'NO', 'NAMA LENGKAP', 'NOMOR INDUK KEPENDUDUKAN ', 'JENIS KELAMIN', 'JABATAN', 'NOMOR HP']
+  Row 3: ['NO', 'NAMA', 'NO', 'NAMA', 'NO', 'NAMA', 'NO ', 'NAMA', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 4: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16']
+  Row 5: ['11', 'ACEH', '11.74', 'LANGSA', '11.74.01', 'LANGSA TIMUR', '11.74.01.2007', 'BUKET MEUDANG ARA', 'A', 'Kades ', '1', 'MUHAMMAD JAMIL, S.Kom.I', '1174016112700002', 'NaN', 'PJ. KEPALA DESA', '085262187552']
+  Row 6: ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'B', 'Prangkat ', '2', 'NaN', 'NaN', 'NaN', 'SEKRETARIS DESA', 'NaN']
+  Row 7: ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'B', 'Prangkat ', '3', 'NaN', 'NaN', 'NaN', 'KASI PEMERINTAHAN', 'NaN']
+
+================================================================================
+FILE 4: data_(tuha peuet gampong).xlsx
+================================================================================
+Sheet names: ['Sheet1']
+
+--- Sheet: Sheet1 ---
+Dimensi: 512 baris x 11 kolom
+
+Header dan beberapa baris data:
+  Row 0: ['DATA BADAN PERMUSYAWARATA', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 1: ['PROVINSI: ACEH', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 2: ['KABUPATEN/KOTA: LANGSA', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 3: ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN']
+  Row 4: ['NO', 'KECAMATAN', 'KEMUKIMAN', 'NaN', 'GAMPONG', 'NaN', 'TUHA PEUET GAMPONG', 'NaN', 'JENIS KELAMIN', 'NaN', 'KET']
+  Row 5: ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NAMA', 'NaN', 'LAKI-LAKI', 'PEREMPUAN', 'NaN']
+  Row 6: ['1', '2', '3', 'NaN', '4', 'NaN', '5', 'NaN', '6', '7', '8']
+  Row 7: ['1', 'LANGSA TIMUR', '1', 'SEUNEUBOK ANTARA', '1', 'BUKET MEDANG ARA', '1', 'Nurhasan', 'NaN', 'NaN', 'NaN']

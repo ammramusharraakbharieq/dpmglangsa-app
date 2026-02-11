@@ -1,0 +1,913 @@
+﻿================================================================================
+MERGED CELLS ANALYSIS
+================================================================================
+
+Total merged cells: 56
+  A1:P1 -> value='DATA KEPALA DESA DAN PERANGKAT DESA KOTA LANGSA'
+  A3:B3 -> value='PROVINSI'
+  C3:D3 -> value='KABUPATEN / KOTA'
+  E3:F3 -> value='KECAMATAN'
+  G3:J3 -> value='DESA'
+  K3:K4 -> value='NO'
+  L3:L4 -> value='NAMA LENGKAP'
+  M3:M4 -> value='NOMOR INDUK KEPENDUDUKAN ( NIK)'
+  N3:N4 -> value='JENIS KELAMIN'
+  O3:O4 -> value='JABATAN'
+  P3:P4 -> value='NOMOR HP'
+  H4:J4 -> value='NAMA'
+  A195:B195 -> value='PROVINSI'
+  C195:D195 -> value='KABUPATEN / KOTA'
+  E195:F195 -> value='KECAMATAN'
+  G195:J195 -> value='DESA'
+  K195:K196 -> value='None'
+  L195:L196 -> value='None'
+  M195:M196 -> value='None'
+  N195:N196 -> value='None'
+  O195:O196 -> value='None'
+  P195:P196 -> value='None'
+  H196:J196 -> value='NAMA'
+  A363:B363 -> value='PROVINSI'
+  C363:D363 -> value='KABUPATEN / KOTA'
+  E363:F363 -> value='KECAMATAN'
+  G363:J363 -> value='DESA'
+  K363:K364 -> value='None'
+  L363:L364 -> value='None'
+  M363:M364 -> value='None'
+  N363:N364 -> value='None'
+  O363:O364 -> value='None'
+  P363:P364 -> value='None'
+  H364:J364 -> value='NAMA'
+  A511:B511 -> value='PROVINSI'
+  C511:D511 -> value='KABUPATEN / KOTA'
+  E511:F511 -> value='KECAMATAN'
+  G511:J511 -> value='DESA'
+  K511:K512 -> value='None'
+  L511:L512 -> value='None'
+  M511:M512 -> value='None'
+  N511:N512 -> value='None'
+  O511:O512 -> value='None'
+  P511:P512 -> value='None'
+  H512:J512 -> value='NAMA'
+  A708:B708 -> value='None'
+  C708:D708 -> value='None'
+  E708:F708 -> value='None'
+  G708:J708 -> value='None'
+  K708:K709 -> value='None'
+  L708:L709 -> value='None'
+  M708:M709 -> value='None'
+  N708:N709 -> value='None'
+  O708:O709 -> value='None'
+  P708:P709 -> value='None'
+  H709:J709 -> value='None'
+
+================================================================================
+ALL ROWS WITH DATA - Full dump
+================================================================================
+Row 1: {1: 'DATA KEPALA DESA DAN PERANGKAT DESA KOTA LANGSA'}
+Row 3: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA', 11: 'NO', 12: 'NAMA LENGKAP', 13: 'NOMOR INDUK KEPENDUDUKAN ( NIK)', 14: 'JENIS KELAMIN', 15: 'JABATAN', 16: 'NOMOR HP'}
+Row 4: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 5: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+Row 6: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.01', 6: 'LANGSA TIMUR', 7: '11.74.01.2007', 8: 'BUKET MEUDANG ARA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUHAMMAD JAMIL, S.Kom.I', 13: '1174016112700002', 14: 'L', 15: 'PJ. KEPALA DESA', 16: '085262187552'}
+Row 7: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 8: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 9: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 10: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 11: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 12: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 13: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 14: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS PEUTUA PUTEH'}
+Row 15: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS MEDANG'}
+Row 16: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS KELUARGA '}
+Row 18: {7: '11.74.01.2009', 8: 'MATANG SEUTUI', 9: 'A', 10: 'Kades ', 11: 1, 12: 'IBRAHIM JAKFAR,SE', 13: '1174011004890009', 15: 'PJ. KEPALA DESA', 16: '085270253703'}
+Row 19: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 20: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 21: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 22: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 23: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 24: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 25: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 26: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Suka Maju'}
+Row 27: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Suka Damai'}
+Row 28: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Suka Makmur'}
+Row 30: {7: '11.74.01.2010', 8: 'BUKET PULO', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ZULHAMSYAH', 13: 1174016112700000, 15: 'PJ. KEPALA DESA', 16: '085260404679'}
+Row 31: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 32: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 33: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 34: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 35: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 36: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 37: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 38: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Setia'}
+Row 39: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Damai'}
+Row 41: {7: '11.74.01.2011', 8: 'MATANG PANYANG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'RUDI IRAWAN', 13: '117412812820006', 15: 'KEPALA DESA', 16: '085288526708'}
+Row 42: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 43: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 44: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 45: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 46: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 47: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 48: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 49: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS PANYANG'}
+Row 50: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS MELATI'}
+Row 51: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS MAWAR'}
+Row 53: {7: '11.74.01.2012', 8: 'SIMPANG WIE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'IBNU ABAS', 13: '1174011312850002', 15: 'KEPALA DESA', 16: '085261721164'}
+Row 54: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 55: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 56: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 57: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 58: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 59: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 60: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 61: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Setia'}
+Row 63: {7: '11.74.01.2013', 8: 'BUKET RATA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUSTAFA', 13: '1174011005820004', 15: 'PJ. KEPALA DESA', 16: '081360394381'}
+Row 64: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKDES'}
+Row 65: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 66: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 67: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 68: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 69: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 70: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 71: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Nusa Indah'}
+Row 72: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Melati'}
+Row 74: {7: '11.74.01.2014', 8: 'BUKET MEUTUAH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'YASIR ', 13: '1174012412810003', 15: 'KEPALA DESA', 16: '085314548384'}
+Row 75: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 76: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 77: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 78: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 79: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 80: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 81: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 82: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Pantoen'}
+Row 83: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Perikanan'}
+Row 84: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Buket Pala'}
+Row 86: {7: '11.74.01.2015', 8: 'ALUE MERBAU', 9: 'A', 10: 'Kades ', 11: 1, 12: 'FAUZI. A', 13: '1174012602760004', 15: 'PJ. KEPALA DESA', 16: '085277366160'}
+Row 87: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 88: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 89: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 90: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 91: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 92: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 93: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 94: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS SAWO'}
+Row 95: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS MANGGA'}
+Row 96: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS JERUK '}
+Row 97: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS SAWIT '}
+Row 99: {7: '11.74.01.2016', 8: 'MATANG CENGAI', 9: 'A', 10: 'Kades ', 11: 1, 12: 'REZA PERMANA, SE', 13: '1174012506750000', 15: 'PJ. KEPALA DESA', 16: '082364546380'}
+Row 100: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 101: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 102: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 103: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 104: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 105: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 106: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 107: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS MELATI'}
+Row 108: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS DAMAI'}
+Row 110: {7: '11.74.01.2017', 8: 'SEUNEUBOK ANTARA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'AMZAH, SH', 13: '1174011008670002', 15: 'PJ. KEPALA DESA', 16: '082272826186'}
+Row 111: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 112: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 113: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 114: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 115: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 116: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 117: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 118: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Upaya'}
+Row 119: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Karya Tani'}
+Row 120: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Buket Awe'}
+Row 122: {7: '11.74.01.2018', 8: 'ALUE PINEUNG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ALNA ARMAYADI', 13: '1174022104570001', 15: 'PJ. KEPALA DESA', 16: '08116703438'}
+Row 123: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 124: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 125: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 126: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 127: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 128: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 129: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 130: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Seulanga'}
+Row 131: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Cempaka'}
+Row 132: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus jeumpa'}
+Row 134: {7: '11.74.01.2019', 8: 'SUKAREJO', 9: 'A', 10: 'Kades ', 11: 1, 12: 'SYAHRUL, S.Kom.I', 13: '1174010809710001', 15: 'PJ. KEPALA DESA', 16: '081375065053'}
+Row 135: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 136: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 137: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 138: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 139: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 140: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 141: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 142: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Pertanian'}
+Row 143: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Nelayan'}
+Row 144: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Pertukangan'}
+Row 145: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Merpati'}
+Row 147: {7: '11.74.01.2020', 8: 'CINTA RAJA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ANDI ISKANDAR RIZA, SE', 13: '1174011206760000', 15: 'PJ. KEPALA DESA', 16: '081375858934'}
+Row 148: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 149: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 150: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 151: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 152: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 153: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 154: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 155: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS MEUNASAH '}
+Row 156: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS NELAYAN '}
+Row 157: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS TEUPIN '}
+Row 159: {7: '11.74.01.2021', 8: 'SUNGAI LUENG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'EL HAZIR', 13: '1174012312730001', 15: 'KEPALA DESA', 16: '085262383806'}
+Row 160: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 161: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 162: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 163: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 164: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 165: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 166: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 167: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS MUARA'}
+Row 168: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS SEJAHTERA'}
+Row 169: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS RAHMAT'}
+Row 171: {7: '11.74.01.2025', 8: 'ALUE PINEUNG TIMUE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUSLEH ADISAF, SE', 13: '1174010807620001', 15: 'PJ. KEPALA DESA', 16: '085262187552'}
+Row 172: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 173: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 174: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 175: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 176: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 177: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 178: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 179: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Firdaus'}
+Row 180: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Seroja'}
+Row 181: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Melati'}
+Row 183: {7: '11.74.01.2026', 8: 'KAPA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'IKHWAN, SE', 13: '117401 020376 0005', 15: 'PJ. KEPALA DESA', 16: '0811615662'}
+Row 184: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 185: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 186: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 187: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 188: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 189: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 190: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 191: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Ilham'}
+Row 192: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Pendidikan'}
+Row 193: {11: 11, 15: 'Kadus Samudera'}
+Row 195: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+Row 196: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 197: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+Row 198: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.02', 6: 'LANGSA BARAT', 7: '11.74.02.2005', 8: 'LHOK BANIE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'YUSRI', 13: '1174022507830006', 15: 'KEPALA DESA', 16: '085270793583'}
+Row 199: {9: 'B', 10: 'Prangkat ', 11: 2, 12: 'TEST SEKRETARIS', 13: '1234567890123456', 15: 'SEKRETARIS DESA'}
+Row 200: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 201: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 202: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 203: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 204: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 205: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 206: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS NELAYAN'}
+Row 207: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS KEUMALA JEUMPA'}
+Row 208: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS SETIA BAKTI'}
+Row 209: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS HIJRAH '}
+Row 210: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KADUS ISLAH '}
+Row 212: {7: '11.74.02.2006', 8: 'PAYA BUJOK TEUNGOH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUHAMMAD SYAM', 13: '1174021001630002', 15: 'PJ. KEPALA DESA', 16: '085262521789'}
+Row 213: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 214: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 215: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 216: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 217: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 218: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 219: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 220: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Timur'}
+Row 221: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Tunong'}
+Row 222: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Baroh'}
+Row 223: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Barat'}
+Row 224: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Teungoh'}
+Row 226: {7: '11.74.02.2007', 8: 'PAYA BUJOK BEURAMO', 9: 'A', 10: 'Kades ', 11: 1, 12: 'TEUKU ABDUL MALIK', 13: '1174021909750004', 15: 'PJ. KEPALA DESA', 16: '081360900255'}
+Row 227: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 228: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 229: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 230: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 231: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 232: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 233: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 234: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS PEUTUA RAHIM'}
+Row 235: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS PEUTUA DOLLAH'}
+Row 236: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS IMUM ABU'}
+Row 237: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS UJUNG BLANG'}
+Row 239: {7: '11.74.02.2008', 8: 'SIMPANG LHEE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'HASBALLAH', 13: '1111041707860002', 15: 'PJ. KEPALA DESA', 16: '082144708098'}
+Row 240: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 241: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 242: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 243: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 244: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 245: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 246: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 247: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS P. ARANI'}
+Row 248: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS ABDULLAH'}
+Row 249: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS BALEE'}
+Row 251: {7: '11.74.02.2009', 8: 'SEURIGET', 9: 'A', 10: 'Kades ', 11: 1, 12: 'NUGROHO', 13: '1174020107900237', 15: 'PJ. KEPALA DESA', 16: '081227183899'}
+Row 252: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 253: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 254: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 255: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 256: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 257: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 258: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 259: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun Malahayati'}
+Row 260: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Tanjung Sari'}
+Row 261: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun Damai'}
+Row 262: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kepala Dusun Utama'}
+Row 264: {7: '11.74.02.2015', 8: 'MATANG SEULIMENG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'JUFRIADI R, SE, M.Si', 13: '1174012909900003', 15: 'KEPALA DESA', 16: '081317120110'}
+Row 265: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 266: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 267: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 268: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 269: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 270: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 271: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 272: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KEPALA DUSUN JEUMPA'}
+Row 273: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KEPALA DUSUN SEULANGA'}
+Row 274: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KEPALA DUSUN MEULU'}
+Row 275: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KEPALA DUSUN KEUPULA'}
+Row 276: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KEPALA DUSUN BANGKAWALI'}
+Row 278: {7: '11.74.02.2016', 8: 'SUNGAI PAUH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUTTAQIN, S.Tr. Ip', 13: ' 1174031708730007', 15: 'PJ. KEPALA DESA', 16: '081385839501'}
+Row 279: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 280: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 281: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 282: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 283: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 284: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 285: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 286: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS DELIMA'}
+Row 287: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS SATRIA'}
+Row 288: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS BTN'}
+Row 290: {7: '11.74.02.2017', 8: 'KUALA LANGSA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ELISUDDIN', 13: '1174020301800004', 15: 'KEPALA DESA', 16: '085276372838'}
+Row 291: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 292: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 293: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 294: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 295: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 296: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 297: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 298: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Harapan'}
+Row 299: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Ikhlas'}
+Row 300: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Setia'}
+Row 301: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Damai'}
+Row 303: {7: '11.74.02.2018', 8: 'TELAGA TUJUH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ADI SUDIRMAN AS, S.Pd', 13: '1174022210900001', 15: 'PJ. KEPALA DESA', 16: '082183324636'}
+Row 304: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 305: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 306: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 307: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 308: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 309: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 310: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 311: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS AMAN'}
+Row 312: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS RUKUN'}
+Row 313: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS SENTOSA'}
+Row 314: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS DAMAI'}
+Row 316: {7: '11.74.02.2019', 8: 'SERAMBI INDAH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'AZHARI', 13: '1174021107720001', 15: 'PJ. KEPALA DESA', 16: '082210185497'}
+Row 317: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 318: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 319: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 320: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 321: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 322: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 323: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 324: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun Pocut Baren '}
+Row 325: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Cut Nyak Dhien'}
+Row 327: {7: '11.74.02.2020', 8: 'SUNGAI PAUH PUSAKA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'FREDDY ALAM SUJAYA', 13: '1174022708890002', 15: 'PJ. KEPALA DESA', 16: '082296129547'}
+Row 328: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 329: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 330: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 331: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 332: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 333: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 334: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 335: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun  Km V'}
+Row 336: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Nelayan'}
+Row 337: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun Kesatuan'}
+Row 339: {7: '11.74.02.2021', 8: 'SUNGAI PAUH TANJONG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ABDULLAH', 13: '1174031206850003', 15: 'PJ. KEPALA DESA', 16: '082230757400'}
+Row 340: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 341: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 342: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 343: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 344: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 345: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 346: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 347: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Makmur'}
+Row 348: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Melati'}
+Row 349: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Mulia'}
+Row 351: {7: '11.74.02.2022', 8: 'SUNGAI PAUH FIRDAUS', 9: 'A', 10: 'Kades ', 11: 1, 12: 'FAUZI', 13: '1174030101890004', 15: 'PJ. KEPALA DESA', 16: '085262036210'}
+Row 352: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 353: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 354: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 355: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 356: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 357: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 358: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 359: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KEPALA DUSUN MESJID'}
+Row 360: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KEPALA DUSUN PUSAKA'}
+Row 361: {11: 11, 15: 'KEPALA DUSUN BALEE'}
+Row 363: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+Row 364: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 365: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+Row 366: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.03', 6: 'LANGSA KOTA', 7: '11.74.03.2007', 8: 'ALUE BEURAWE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'NURDIN', 13: '1174030107570122', 14: 'L', 15: 'KEPALA DESA', 16: '085270452299'}
+Row 367: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 2, 12: 'BUSTAMI', 13: '1174022911670001', 14: 'L', 15: 'SEKRETARIS DESA', 16: '0'}
+Row 368: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 3, 12: 'SULAIMAN ', 13: '1174030402710003', 14: 'L', 15: 'KASI PEMERINTAHAN', 16: '0'}
+Row 369: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 4, 12: 'SAYUTI', 13: '1174093004940004', 14: 'L', 15: 'KASI PELAYANAN', 16: '0'}
+Row 370: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 5, 12: 'AMBIA', 13: '1174030711690004', 14: 'L', 15: 'KASI KESEJAHTERAAN', 16: '0'}
+Row 371: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 6, 12: 'FAUZIAH HANUM', 13: '1174034303790001', 14: 'P', 15: 'KAUR KEUANGAN', 16: '0'}
+Row 372: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 7, 12: 'NURFATMA, S.Pd \t', 13: '1174034807910002', 14: 'P', 15: 'KAUR UMUM', 16: '0'}
+Row 373: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 8, 12: 'ZULFAHMI \t', 13: '1174033103920002', 14: 'L', 15: 'KAUR PERENCANAAN', 16: '0'}
+Row 374: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 9, 12: 'SULAIMAN ', 13: '1174030402710003', 14: 'L', 15: 'KADUS TP BUGENG ', 16: '0'}
+Row 375: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 10, 12: 'NURDIN', 13: '1174031304880003', 14: 'L', 15: 'KADUS MT KUMBANG ', 16: '0'}
+Row 376: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 11, 12: 'ABDUL KADIR ', 13: '1174030107630265', 14: 'L', 15: 'KADUS BATA ', 16: '0'}
+Row 377: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 12, 12: 'MARZUKI ', 13: '1174031005650001', 14: 'L', 15: 'KADUS MASJID ', 16: '0'}
+Row 378: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 13, 12: 'M NASIR ', 13: '1174030107650359', 14: 'L', 15: 'KADUS BLANG ', 16: '0'}
+Row 380: {7: '11.74.03.2006', 8: 'BLANG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'JUNAIDI', 13: '1174032404730004', 15: 'KEPALA DESA', 16: '085370790414'}
+Row 381: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 382: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 383: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 384: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 385: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 386: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 387: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 388: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KEPALA DUSUN RUKUN'}
+Row 389: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KEPALA DUSUN DAMAI'}
+Row 390: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KEPALA DUSUN RAHMAH'}
+Row 391: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KEPALA DUSUN IKHLAS'}
+Row 392: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KEPALA DUSUN SENTOSA'}
+Row 394: {7: '11.74.03.2009', 8: 'TEUNGOH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'SYARIFUDDIN, S.Sos.I', 13: '1174031504580002', 15: 'KEPALA DESA', 16: '085362293352'}
+Row 395: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 396: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 397: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 398: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 399: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 400: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 401: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 402: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus BLANG/Rel'}
+Row 403: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Tj.NGA'}
+Row 404: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus SMP5/Pusri'}
+Row 405: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Balee Krueng'}
+Row 406: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Yusuf Hasyim'}
+Row 407: {9: 'B', 10: 'Prangkat ', 11: 14, 15: 'Kadus Peutua Thaib'}
+Row 408: {9: 'B', 10: 'Prangkat ', 11: 15, 15: 'Kadus Keupula'}
+Row 409: {9: 'B', 10: 'Prangkat ', 11: 16, 15: 'Kadus Permai'}
+Row 410: {9: 'B', 10: 'Prangkat ', 11: 17, 15: 'Kadus Timbangan'}
+Row 411: {9: 'B', 10: 'Prangkat ', 11: 18, 15: 'Kadus Rumah Potong'}
+Row 413: {7: '11.74.03.2011', 8: 'BLANG SEUNIBONG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ELIDION', 13: 1174031404660000, 15: 'KEPALA DESA', 16: '085273456041'}
+Row 414: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 415: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 416: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 417: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 418: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 419: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 420: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 421: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS BERSAMA'}
+Row 422: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS SEPAKAT'}
+Row 423: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS RAJA'}
+Row 424: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS KELAPA'}
+Row 426: {7: '11.74.03.2013', 8: 'PAYA BUJOK BLANG PASE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUSFIZAR', 13: '1174032803740001', 15: 'KEPALA DESA', 16: '082364273007'}
+Row 427: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 428: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 429: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 430: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 431: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 432: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 433: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 434: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus  Sehat'}
+Row 435: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Alwasliyah'}
+Row 436: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus PJKA'}
+Row 437: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Melati'}
+Row 438: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Bustanul Ulum'}
+Row 440: {7: '11.74.03.2013', 8: 'TUALANG TEUNGOH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'FERYZAL AZHARI, S.STP', 13: '1174031505550001', 15: 'PJ. KEPALA DESA', 16: '085297668655'}
+Row 441: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 442: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 443: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 444: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 445: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 446: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 447: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 448: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS '}
+Row 449: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS '}
+Row 450: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS '}
+Row 451: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS '}
+Row 452: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KADUS '}
+Row 454: {7: '11.74.03.2010', 8: 'PEUKAN LANGSA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'LIZAM', 13: '1174031210680002', 15: 'KEPALA DESA', 16: '085358721710'}
+Row 455: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 456: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 457: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 458: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 459: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 460: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 461: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 462: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun Blok A'}
+Row 463: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Blok B'}
+Row 464: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun Blok C'}
+Row 465: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kepala Dusun T. Umar'}
+Row 466: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kepala Dusun Iskandar Muda'}
+Row 468: {7: '11.74.03.2011', 8: 'JAWA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'M. HATTA, SE', 13: '1174032009710003', 15: 'PJ. KEPALA DESA', 16: '082164032171'}
+Row 469: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 470: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 471: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 472: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 473: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 474: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 475: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 476: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Jawa Belakang I'}
+Row 477: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Jawa Belakang II'}
+Row 478: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Jawa Muka I'}
+Row 479: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Jawa Muka II'}
+Row 480: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Jawa Tengah'}
+Row 481: {9: 'B', 10: 'Prangkat ', 11: 14, 15: 'Kadus Jawa Baru'}
+Row 482: {9: 'B', 10: 'Prangkat ', 11: 15, 15: 'Kadus Amaliah'}
+Row 483: {9: 'B', 10: 'Prangkat ', 11: 16, 15: 'Kadus Asrama Gajah'}
+Row 484: {9: 'B', 10: 'Prangkat ', 11: 17, 15: 'Kadus PJKA'}
+Row 486: {7: '11.74.03.2010', 8: 'MEUTIA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'SUMARDI, SST, M.Kes', 13: '1174033012520002', 14: 'L', 15: 'PJ. KEPALA DESA', 16: '085277422279'}
+Row 487: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 488: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 489: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 490: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 491: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 492: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 493: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 494: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'kadus 1'}
+Row 495: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'kadus 2'}
+Row 496: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'kadus 3'}
+Row 497: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'kadus 4'}
+Row 498: {9: 'B', 10: 'Prangkat ', 11: 14, 12: 'unedo', 13: '12346666666666666', 14: 'L', 15: 'KADUS 6', 16: '081321223465'}
+Row 499: {7: '11.74.03.2009', 8: 'DAULAT', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUHAJIR', 13: '1174033112590000', 15: 'KEPALA DESA', 16: '081377252793'}
+Row 500: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 501: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 502: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 503: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 504: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 505: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 506: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 507: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus I'}
+Row 508: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus II'}
+Row 509: {11: 11, 15: 'Kadus III'}
+Row 511: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+Row 512: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 513: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+Row 514: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.04', 6: 'LANGSA LAMA', 7: '11.74.04.2001', 8: 'PONDOK KEMUNING', 9: 'A', 10: 'Kades ', 11: 1, 12: 'PAINO', 13: '1174010708680001', 15: 'PJ. KEPALA DESA', 16: '089608541595'}
+Row 515: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 516: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 517: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 518: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 519: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 520: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 521: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 522: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS PERDAMAIAN'}
+Row 523: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS ABADI'}
+Row 524: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS LESTARI'}
+Row 525: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS PONDOK INDAH'}
+Row 526: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KADUS RAHAYU'}
+Row 527: {9: 'B', 10: 'Prangkat ', 11: 14, 15: 'KADUS PENDIDIKAN'}
+Row 529: {7: '11.74.04.2002', 8: 'SEULALAH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ELYA TULUS, SE', 13: '1174010606680003', 15: 'PJ. KEPALA DESA', 16: '085360701000'}
+Row 530: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 531: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 532: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 533: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 534: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 535: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 536: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 537: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Mawar I'}
+Row 538: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Mawar II'}
+Row 539: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Tj. Jati I'}
+Row 540: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Tj. Jati II'}
+Row 542: {7: '11.74.04.2003', 8: 'PONDOK PABRIK', 9: 'A', 10: 'Kades ', 11: 1, 12: 'AZMAN MA, SH, MH', 13: '1174011105650004', 15: 'KEPALA DESA', 16: '081362571537'}
+Row 543: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 544: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 545: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 546: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 547: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 548: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 549: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 550: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Nuri I'}
+Row 551: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Nuri II'}
+Row 552: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Garuda'}
+Row 553: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Merpati'}
+Row 554: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Rajawali'}
+Row 556: {7: '11.74.04.2004', 8: 'SIDODADI', 9: 'A', 10: 'Kades ', 11: 1, 12: 'TRIMO', 13: '1174010705780004', 15: 'KEPALA DESA', 16: '085261727098'}
+Row 557: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 558: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 559: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 560: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 561: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 562: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 563: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 564: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Giat'}
+Row 565: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Sadar'}
+Row 566: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Amal'}
+Row 568: {7: '11.74.04.2005', 8: 'SIDOREJO', 9: 'A', 10: 'Kades ', 11: 1, 12: 'YUNI MARIKO, SE', 13: '1174012506690001', 15: 'PJ. KEPALA DESA', 16: '085296963445'}
+Row 569: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 570: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 571: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 572: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 573: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 574: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 575: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 576: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala DusunDamai'}
+Row 577: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Mulya'}
+Row 578: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun Setia'}
+Row 579: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kepala Dusun Sentral'}
+Row 581: {7: '11.74.04.2006', 8: 'BARO', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ELSA ASRINA POETRI', 13: 1174012909790000, 15: 'PJ. KEPALA DESA', 16: '082365652014'}
+Row 582: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 583: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 584: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 585: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 586: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 587: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 588: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 589: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KEPALA DUSUN SENI'}
+Row 590: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KEPALA DUSUN DAMAI'}
+Row 591: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KEPALA DUSUN SOPAN'}
+Row 592: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KEPALA DUSUN AMAL'}
+Row 593: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KEPALA DUSUN MULIA'}
+Row 595: {7: '11.74.04.2007', 8: 'MEURANDEH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'RISDIANTO', 13: '1174010510690002', 15: 'PJ. KEPALA DESA', 16: '085370339127'}
+Row 596: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 597: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 598: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 599: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 600: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 601: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 602: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 603: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS SETIA'}
+Row 604: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS TEPIAN DAYA'}
+Row 605: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS SAMUDRA'}
+Row 607: {7: '11.74.04.2008', 8: 'ASAM PEUTIK', 9: 'A', 10: 'Kades ', 11: 1, 12: 'RIZA ARIZONA, S.Pd', 13: '117401180777002', 15: 'PJ. KEPALA DESA', 16: '081361637828'}
+Row 608: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 609: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 610: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 611: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 612: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 613: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 614: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 615: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Samudra'}
+Row 616: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Makmur'}
+Row 617: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Bukit Tengah'}
+Row 618: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Pondok'}
+Row 619: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Bukit Kidul'}
+Row 621: {7: '11.74.04.2009', 8: 'BAROH LANGSA LAMA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ERIZAL, SKM,M.Kes', 13: '1174010408800002', 15: 'PJ. KEPALA DESA', 16: '085277433400'}
+Row 622: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 623: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 624: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 625: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 626: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 627: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 628: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 629: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Kpt. Lidan'}
+Row 630: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Persatuan'}
+Row 631: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Pahlawan'}
+Row 632: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Makmur'}
+Row 633: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Lambong'}
+Row 635: {7: '11.74.04.2010', 8: 'SEULALAH BARU', 9: 'A', 10: 'Kades ', 11: 1, 12: 'KIKI ARDIANTO', 13: '1174011310750002', 15: 'PJ. KEPALA DESA', 16: '082277318831'}
+Row 636: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 637: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 638: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 639: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 640: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 641: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 642: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 643: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun Melati'}
+Row 644: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Kenanga'}
+Row 645: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun Cendana'}
+Row 647: {7: '11.74.04.2011', 8: 'SUKAJADI KEBUN IRENG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ARIF FIRMANSYAH', 13: '1174011010840001', 15: 'PJ. KEPALA DESA', 16: '081269400800'}
+Row 648: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 649: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 650: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 651: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 652: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 653: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 654: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 655: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS DSN. MERAK PONDOK TENGAH'}
+Row 656: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS DSN. MERAK PAYA SATU'}
+Row 657: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS DSN. MERAK MAKMUR'}
+Row 658: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS DSN. MERAK SUKAJADI'}
+Row 660: {7: '11.74.04.2012', 8: 'MEURANDEH TEUNGOH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MARLIADI', 13: ' 1174042412700001', 15: 'PJ. KEPALA DESA', 16: '085261716026'}
+Row 661: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 662: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 663: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 664: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 665: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 666: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 667: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 668: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Bahagia I '}
+Row 669: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Bahagia II'}
+Row 670: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Purnama'}
+Row 671: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Gejora'}
+Row 673: {7: '11.74.04.2013', 8: 'MEURANDEH DAYAH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ASEP IKHWAN', 13: '1174010308780002', 15: 'PJ. KEPALA DESA', 16: '085277870697'}
+Row 674: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 675: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 676: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 677: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 678: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 679: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 680: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 681: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KEPALA DUSUN BAHAGIA II'}
+Row 682: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KEPALA DUSUN KAWATAN'}
+Row 683: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KEPALA DUSUN DAYAH'}
+Row 685: {7: '11.74.04.2014', 8: 'MEURANDEH ACEH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'NASARUDDIN', 13: '1174040206880002', 14: 'L', 15: 'PJ. KEPALA DESA', 16: '081269019060'}
+Row 686: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 2, 14: 'L', 15: 'SEKRETARIS DESA'}
+Row 687: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 3, 14: 'L', 15: 'KASI PEMERINTAHAN'}
+Row 688: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 4, 14: 'L', 15: 'KASI PELAYANAN'}
+Row 689: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 5, 14: 'L', 15: 'KASI KESEJAHTERAAN'}
+Row 690: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 6, 14: 'L', 15: 'KAUR KEUANGAN'}
+Row 691: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 7, 14: 'L', 15: 'KAUR UMUM'}
+Row 692: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 8, 14: 'L', 15: 'KAUR PERENCANAAN'}
+Row 693: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 9, 14: 'L', 15: 'Kadus Mulia'}
+Row 694: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 10, 14: 'L', 15: 'Kadus Makmur'}
+Row 695: {7: '11.74.04.2014', 9: 'B', 10: 'Prangkat ', 11: 11, 14: 'L', 15: 'Kadus Sejahtera'}
+Row 697: {7: '11.74.04.2015', 8: 'BATEE PUTEH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'M. HARUN', 13: '1174012103670002', 15: 'PJ. KEPALA DESA', 16: '085260594646'}
+Row 698: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 699: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 700: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 701: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 702: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 703: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 704: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 705: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Bakti'}
+Row 706: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Al-Mahdi'}
+Row 707: {11: 11, 15: 'Kadus Syuhada'}
+Row 709: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+Row 710: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 711: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+Row 712: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.05', 6: 'LANGSA BARO', 7: '11.74.05.2001', 8: 'TIMBANG LANGSA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'KOKO HENDRAWANSYAH', 13: '1174020107720001', 15: 'PJ. KEPALA DESA', 16: '085222777715'}
+Row 713: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 714: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 715: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 716: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 717: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 718: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 719: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 720: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Emplasmen'}
+Row 721: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Pendidikan'}
+Row 722: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Nelayan'}
+Row 723: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Sejahtera'}
+Row 724: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Industri'}
+Row 726: {7: '11.74.05.2002', 8: 'ALUE DUA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'AMRIN, SE', 13: '1174020109640008', 15: 'PJ. KEPALA DESA', 16: '081361772068'}
+Row 727: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 728: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 729: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 730: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 731: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 732: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 733: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 734: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Teladan Indah'}
+Row 735: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Mulia Indah'}
+Row 736: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Damai Indah'}
+Row 738: {7: '11.74.05.2003', 8: 'BIREM PUNTONG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'SAMSUL BAHRI', 13: '1174050304080009', 15: 'KEPALA DESA', 16: '085262285424'}
+Row 739: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 740: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 741: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 742: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 743: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 744: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 745: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 746: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS NELAYAN'}
+Row 747: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS PENDIDIKAN'}
+Row 748: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS MESJID'}
+Row 749: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS PUSARA'}
+Row 751: {7: '11.74.05.2004', 8: 'PAYA BUJOK SEULEMAK', 9: 'A', 10: 'Kades ', 11: 1, 12: 'M. SYARIFUDDIN', 13: '1174052505550001', 15: 'KEPALA DESA', 16: '085370315441'}
+Row 752: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 753: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 754: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 755: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 756: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 757: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 758: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 759: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Perumnas'}
+Row 760: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Bukit'}
+Row 761: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Rahmat'}
+Row 762: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Kurnia'}
+Row 763: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kadus Pahlawan'}
+Row 764: {9: 'B', 10: 'Prangkat ', 11: 14, 15: 'Kadus Pendidikan'}
+Row 765: {9: 'B', 10: 'Prangkat ', 11: 15, 15: 'Kadus Utama'}
+Row 766: {9: 'B', 10: 'Prangkat ', 11: 16, 15: 'Kadus Pase'}
+Row 767: {9: 'B', 10: 'Prangkat ', 11: 17, 15: 'Kadus Gabungan'}
+Row 769: {7: '11.74.05.2005', 8: 'PONDOK KELAPA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'AGUNG MURSALIN, Str.Ip', 13: '1174021701650001', 15: 'PJ. KEPALA DESA', 16: '081290245262'}
+Row 770: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 771: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 772: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 773: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 774: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 775: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 776: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 777: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun I Kelapa Hijau'}
+Row 778: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun II Kelapa Gading'}
+Row 779: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun III Kelapa Hibrida'}
+Row 780: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kepala Dusun IV Kelapa Nias'}
+Row 781: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'Kepala Dusun V Kelapa Puyuh'}
+Row 782: {9: 'B', 10: 'Prangkat ', 11: 14, 15: 'Kepala Dusun VI Seulanga'}
+Row 784: {7: '11.74.05.2006', 8: 'KARANG ANYAR', 9: 'A', 10: 'Kades ', 11: 1, 12: 'HARTAMA, S.STP', 13: '1174022302710001', 15: 'PJ. KEPALA DESA', 16: '082251006196'}
+Row 785: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 786: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 787: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 788: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 789: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 790: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 791: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 792: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KEPALA DUSUN RUKUN'}
+Row 793: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KEPALA DUSUN BAHAGIA'}
+Row 794: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KEPALA DUSUN DAMAI'}
+Row 795: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KEPALA DUSUN MAKMUR'}
+Row 796: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KEPALA DUSUN SETIA'}
+Row 797: {9: 'B', 10: 'Prangkat ', 11: 14, 15: 'KEPALA DUSUN MULIA'}
+Row 799: {7: '11.74.05.2007', 8: 'PAYA BUJOK TUNONG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'EFENDI USMAN BEN', 13: 1174022310640000, 15: 'KEPALA DESA', 16: '082666190440'}
+Row 800: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 801: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 802: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 803: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 804: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 805: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 806: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 807: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Analisa'}
+Row 808: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Bahagia'}
+Row 809: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Utama'}
+Row 810: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kadus Damai'}
+Row 812: {7: '11.74.05.2008', 8: 'GEUDUBANG JAWA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'AULIA RAHMAN, S.STP', 13: '1174022101610001', 15: 'PJ. KEPALA DESA', 16: '081264264260'}
+Row 813: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 814: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 815: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 816: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 817: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 818: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 819: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 820: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun Damai'}
+Row 821: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun Bahagia'}
+Row 822: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kepala Dusun Cendana'}
+Row 823: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'Kepala Dusun Seulanga'}
+Row 825: {7: '11.74.05.2009', 8: 'GEUDUBANG ACEH', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUHAMMAD FAJAR FAHLEVI, Str.Ip', 13: '1174023101590002', 15: 'PJ. KEPALA DESA', 16: '085358200027'}
+Row 826: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 827: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 828: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 829: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 830: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 831: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 832: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 833: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus I Keude Rambe'}
+Row 834: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus II Aloe Saboh'}
+Row 835: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus III BTN ABRI'}
+Row 837: {7: '11.74.05.2010', 8: 'ALUE DUA BAKARAN BATEE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'ELVI FAISAL, SE', 13: '1174052208870001', 15: 'PJ. KEPALA DESA', 16: '085262776091'}
+Row 838: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 839: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 840: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 841: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 842: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 843: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 844: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 845: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kepala Dusun '}
+Row 846: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kepala Dusun'}
+Row 848: {7: '11.74.05.2011', 8: 'LENGKONG', 9: 'A', 10: 'Kades ', 11: 1, 12: 'SEPTIAN ALFURQAN, S.STP', 13: '1174021508650000', 15: 'PJ. KEPALA DESA', 16: '085297051333'}
+Row 849: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 850: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 851: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 852: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 853: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 854: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 855: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 856: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'KADUS.MULIA'}
+Row 857: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'KADUS.KELUARGA'}
+Row 858: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'KADUS.KARYA'}
+Row 859: {9: 'B', 10: 'Prangkat ', 11: 12, 15: 'KADUS.SEJAHTERA'}
+Row 860: {9: 'B', 10: 'Prangkat ', 11: 13, 15: 'KADUS.RUKUN'}
+Row 862: {7: '11.74.05.2012', 8: 'SUKAJADI MAKMUR', 9: 'A', 10: 'Kades ', 11: 1, 12: 'NAZAR NURFADLI AMD.PEL', 13: '1174021206720000', 15: 'PJ. KEPALA DESA', 16: '085218797389'}
+Row 863: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+Row 864: {9: 'B', 10: 'Prangkat ', 11: 3, 15: 'KASI PEMERINTAHAN'}
+Row 865: {9: 'B', 10: 'Prangkat ', 11: 4, 15: 'KASI PELAYANAN'}
+Row 866: {9: 'B', 10: 'Prangkat ', 11: 5, 15: 'KASI KESEJAHTERAAN'}
+Row 867: {9: 'B', 10: 'Prangkat ', 11: 6, 15: 'KAUR KEUANGAN'}
+Row 868: {9: 'B', 10: 'Prangkat ', 11: 7, 15: 'KAUR UMUM'}
+Row 869: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 870: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus 1'}
+Row 871: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus 2'}
+Row 872: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus 3'}
+
+================================================================================
+KECAMATAN SECTIONS - Header rows analysis
+================================================================================
+
+Kecamatan first occurrence rows:
+  LANGSA TIMUR: row 6
+    Row 2: {}
+    Row 3: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA', 11: 'NO', 12: 'NAMA LENGKAP', 13: 'NOMOR INDUK KEPENDUDUKAN ( NIK)', 14: 'JENIS KELAMIN', 15: 'JABATAN', 16: 'NOMOR HP'}
+    Row 4: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+    Row 5: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+    Row 6: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.01', 6: 'LANGSA TIMUR', 7: '11.74.01.2007', 8: 'BUKET MEUDANG ARA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'MUHAMMAD JAMIL, S.Kom.I', 13: '1174016112700002', 14: 'L', 15: 'PJ. KEPALA DESA', 16: '085262187552'}
+    Row 7: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+  LANGSA BARAT: row 198
+    Row 194: {}
+    Row 195: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+    Row 196: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+    Row 197: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+    Row 198: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.02', 6: 'LANGSA BARAT', 7: '11.74.02.2005', 8: 'LHOK BANIE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'YUSRI', 13: '1174022507830006', 15: 'KEPALA DESA', 16: '085270793583'}
+    Row 199: {9: 'B', 10: 'Prangkat ', 11: 2, 12: 'TEST SEKRETARIS', 13: '1234567890123456', 15: 'SEKRETARIS DESA'}
+  LANGSA KOTA: row 366
+    Row 362: {}
+    Row 363: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+    Row 364: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+    Row 365: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+    Row 366: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.03', 6: 'LANGSA KOTA', 7: '11.74.03.2007', 8: 'ALUE BEURAWE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'NURDIN', 13: '1174030107570122', 14: 'L', 15: 'KEPALA DESA', 16: '085270452299'}
+    Row 367: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 2, 12: 'BUSTAMI', 13: '1174022911670001', 14: 'L', 15: 'SEKRETARIS DESA', 16: '0'}
+  LANGSA LAMA: row 514
+    Row 510: {}
+    Row 511: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+    Row 512: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+    Row 513: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+    Row 514: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.04', 6: 'LANGSA LAMA', 7: '11.74.04.2001', 8: 'PONDOK KEMUNING', 9: 'A', 10: 'Kades ', 11: 1, 12: 'PAINO', 13: '1174010708680001', 15: 'PJ. KEPALA DESA', 16: '089608541595'}
+    Row 515: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}
+  LANGSA BARO: row 712
+    Row 708: {}
+    Row 709: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: 'DESA'}
+    Row 710: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+    Row 711: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+    Row 712: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.05', 6: 'LANGSA BARO', 7: '11.74.05.2001', 8: 'TIMBANG LANGSA', 9: 'A', 10: 'Kades ', 11: 1, 12: 'KOKO HENDRAWANSYAH', 13: '1174020107720001', 15: 'PJ. KEPALA DESA', 16: '085222777715'}
+    Row 713: {9: 'B', 10: 'Prangkat ', 11: 2, 15: 'SEKRETARIS DESA'}

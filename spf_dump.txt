@@ -1,0 +1,31 @@
+Row 349: {9: 'B', 10: 'Prangkat ', 11: 8, 15: 'KAUR PERENCANAAN'}
+Row 350: {9: 'B', 10: 'Prangkat ', 11: 9, 15: 'Kadus Makmur'}
+Row 351: {9: 'B', 10: 'Prangkat ', 11: 10, 15: 'Kadus Melati'}
+Row 352: {9: 'B', 10: 'Prangkat ', 11: 11, 15: 'Kadus Mulia'}
+Row 353: EMPTY
+Row 354: {7: '11.74.02.2022', 8: 'SUNGAI PAUH FIRDAUS', 9: 'A', 10: 'Kades ', 11: 1, 12: 'FAUZI', 13: '1174030101890004', 14: 'L', 15: 'PJ. KEPALA DESA', 16: '085262036210'}
+Row 355: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 2, 14: 'L', 15: 'SEKRETARIS DESA'}
+Row 356: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 3, 14: 'L', 15: 'KASI PEMERINTAHAN'}
+Row 357: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 4, 14: 'L', 15: 'KASI PELAYANAN'}
+Row 358: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 5, 14: 'L', 15: 'KASI KESEJAHTERAAN'}
+Row 359: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 6, 14: 'L', 15: 'KAUR KEUANGAN'}
+Row 360: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 7, 14: 'L', 15: 'KAUR UMUM'}
+Row 361: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 8, 14: 'L', 15: 'KAUR PERENCANAAN'}
+Row 362: {7: '11.74.02.2022', 9: 'B', 10: 'Prangkat ', 11: 9, 14: 'L', 15: 'KEPALA DUSUN MESJID'}
+Row 363: {1: 'PROVINSI', 3: 'KABUPATEN / KOTA', 5: 'KECAMATAN', 7: '11.74.02.2022', 11: 10, 12: 'NAMA LENGKAP', 13: 'NOMOR INDUK KEPENDUDUKAN ( NIK)', 14: 'L', 15: 'KEPALA DUSUN PUSAKA', 16: 'NOMOR HP'}
+Row 364: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 365: EMPTY
+Row 366: EMPTY
+Row 367: EMPTY
+Row 368: EMPTY
+Row 369: {1: 'PROVINSI', 2: 2, 3: 'KABUPATEN / KOTA', 4: 4, 5: 'KECAMATAN', 6: 6, 7: 'DESA', 8: 8}
+Row 370: {1: 'PROVINSI', 2: 2, 3: 'KABUPATEN / KOTA', 4: 4, 5: 'KECAMATAN', 6: 6, 7: 'DESA', 8: 8}
+Row 371: {1: 'NO', 2: 'NAMA', 3: 'NO', 4: 'NAMA', 5: 'NO', 6: 'NAMA', 7: 'NO ', 8: 'NAMA'}
+Row 372: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16}
+Row 373: {1: 11, 2: 'ACEH', 3: 11.74, 4: 'LANGSA', 5: '11.74.03', 6: 'LANGSA KOTA', 7: '11.74.03.2007', 8: 'ALUE BEURAWE', 9: 'A', 10: 'Kades ', 11: 1, 12: 'NURDIN', 13: '1174030107570122', 14: 'L', 15: 'KEPALA DESA', 16: '085270452299'}
+Row 374: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 2, 12: 'BUSTAMI', 13: '1174022911670001', 14: 'L', 15: 'SEKRETARIS DESA', 16: '0'}
+Row 375: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 3, 12: 'SULAIMAN ', 13: '1174030402710003', 14: 'L', 15: 'KASI PEMERINTAHAN', 16: '0'}
+Row 376: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 4, 12: 'SAYUTI', 13: '1174093004940004', 14: 'L', 15: 'KASI PELAYANAN', 16: '0'}
+Row 377: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 5, 12: 'AMBIA', 13: '1174030711690004', 14: 'L', 15: 'KASI KESEJAHTERAAN', 16: '0'}
+Row 378: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 6, 12: 'FAUZIAH HANUM', 13: '1174034303790001', 14: 'P', 15: 'KAUR KEUANGAN', 16: '0'}
+Row 379: {7: '11.74.03.2007', 9: 'B', 10: 'Prangkat ', 11: 7, 12: 'NURFATMA, S.Pd \t', 13: '1174034807910002', 14: 'P', 15: 'KAUR UMUM', 16: '0'}
