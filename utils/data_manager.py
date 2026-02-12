@@ -27,61 +27,69 @@ def get_worksheet(sheet_name):
         return None
 
 
-def _sync_geuchik_name_across_files(gampong_name, new_name):
+def _sync_geuchik_data_across_files(gampong_name, field_map):
     """
-    Internal helper to sync Geuchik Name across all 3 key files based on Gampong Name.
-    Key Files:
-    1. Camat_Mukim_Geuchik (Col 7: NAMA GEUCHIK, Key: Col 6 GAMPONG)
-    2. Geuchik_Detail (Col 9: NAMA_LENGKAP, Key: Col 8 DESA)
-    3. Perangkat_Desa (Col 12: NAMA_LENGKAP, Key: Col 8 DESA, Jabatan: KEPALA DESA)
+    Internal helper to sync ANY Geuchik data across files.
+    field_map: dict of {field_name: new_value}
+    Supported fields: NAMA_LENGKAP, JENIS_KELAMIN, JABATAN, NO_HP, NO_DESA
     """
     try:
-        # 1. Camat_Mukim_Geuchik
-        ws1 = get_worksheet("Camat_Mukim_Geuchik")
-        if ws1:
-            try:
-                cell = ws1.find(gampong_name)
-                # Ensure we found it in GAMPONG column (F=6)
-                if cell and cell.col == 6:
-                    ws1.update_cell(cell.row, 7, new_name)
-            except gspread.exceptions.CellNotFound:
-                pass
+        # 1. Camat_Mukim_Geuchik (Only has NAMA GEUCHIK)
+        if 'NAMA_LENGKAP' in field_map:
+            new_name = field_map['NAMA_LENGKAP']
+            ws1 = get_worksheet("Camat_Mukim_Geuchik")
+            if ws1:
+                try:
+                    cell = ws1.find(gampong_name)
+                    if cell and cell.col == 6:
+                        ws1.update_cell(cell.row, 7, new_name)
+                except gspread.exceptions.CellNotFound:
+                    pass
 
         # 2. Geuchik_Detail
+        # Fields: NO_DESA(7), NAMA_LENGKAP(9), JENIS_KELAMIN(13), JABATAN(17), NO_HP(18)
         ws2 = get_worksheet("Geuchik_Detail")
         if ws2:
             try:
                 cell = ws2.find(gampong_name)
-                # Ensure we found it in DESA column (H=8)
                 if cell and cell.col == 8:
-                    ws2.update_cell(cell.row, 9, new_name)
+                    row = cell.row
+                    if 'NO_DESA' in field_map: ws2.update_cell(row, 7, field_map['NO_DESA'])
+                    if 'NAMA_LENGKAP' in field_map: ws2.update_cell(row, 9, field_map['NAMA_LENGKAP'])
+                    if 'JENIS_KELAMIN' in field_map: ws2.update_cell(row, 13, field_map['JENIS_KELAMIN'])
+                    if 'JABATAN' in field_map: ws2.update_cell(row, 17, field_map['JABATAN'])
+                    if 'NO_HP' in field_map: ws2.update_cell(row, 18, field_map['NO_HP'])
             except gspread.exceptions.CellNotFound:
                 pass
 
         # 3. Perangkat_Desa
+        # Fields: NO_DESA(7), NAMA_LENGKAP(12), JENIS_KELAMIN(14), JABATAN(15), NO_HP(16)
         ws3 = get_worksheet("Perangkat_Desa")
         if ws3:
             cells = ws3.findall(gampong_name)
             for cell in cells:
-                # Ensure found in DESA column (H=8)
                 if cell.col == 8:
-                    # Check Jabatan in Col 15 (O)
-                    jabatan = ws3.cell(cell.row, 15).value
-                    if jabatan and str(jabatan).strip().upper() in ['KEPALA DESA', 'PJ. KEPALA DESA']:
-                        ws3.update_cell(cell.row, 12, new_name)
-                        break # Assume only one Kepala Desa per Gampong
+                    # Check if this row is for Kepala Desa
+                    jabatan_val = ws3.cell(cell.row, 15).value
+                    # We check if it's currently Kepdes OR if we are updating Jabatan to/from Kepdes
+                    # Ideally we find the existing Kepdes row
+                    if jabatan_val and str(jabatan_val).strip().upper() in ['KEPALA DESA', 'PJ. KEPALA DESA']:
+                        row = cell.row
+                        if 'NO_DESA' in field_map: ws3.update_cell(row, 7, field_map['NO_DESA'])
+                        if 'NAMA_LENGKAP' in field_map: ws3.update_cell(row, 12, field_map['NAMA_LENGKAP'])
+                        if 'JENIS_KELAMIN' in field_map: ws3.update_cell(row, 14, field_map['JENIS_KELAMIN'])
+                        if 'JABATAN' in field_map: ws3.update_cell(row, 15, field_map['JABATAN'])
+                        if 'NO_HP' in field_map: ws3.update_cell(row, 16, field_map['NO_HP'])
+                        break
 
     except Exception as e:
         print(f"Sync error: {e}")
-        # Non-blocking error for sync
 
 def update_geuchik_name(gampong_name, old_name, new_name):
     """Update nama Geuchik di semua sheet (Triggered from Page 2)"""
-    # Use the new robust sync function
     try:
-        _sync_geuchik_name_across_files(gampong_name, new_name)
+        _sync_geuchik_data_across_files(gampong_name, {'NAMA_LENGKAP': new_name})
         clear_cache()
-        # Return dummy success format to maintain compatibility with existing frontend code
         return {'file1': {'updated': True, 'rows': 1}, 'file2': {'updated': True, 'rows': 1}, 'file3': {'updated': True, 'rows': 1}}
     except Exception as e:
          return {'error': str(e)}
@@ -101,12 +109,13 @@ def update_geuchik_detail(desa, field, new_value):
         if not col: return {'success': False, 'message': 'Field invalid'}
 
         cell = ws.find(desa)
-        if cell and cell.col == 8: # Ensure found in DESA column (H=8)
+        if cell and cell.col == 8: 
              ws.update_cell(cell.row, col, new_value)
              
-             # SYNC: If updating Name, sync to other files
-             if field == 'NAMA_LENGKAP':
-                 _sync_geuchik_name_across_files(desa, new_value)
+             # SYNC: If updating key fields, sync to other files
+             sync_fields = ['NO_DESA', 'NAMA_LENGKAP', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP']
+             if field in sync_fields:
+                 _sync_geuchik_data_across_files(desa, {field: new_value})
                  
              clear_cache()
              return {'success': True, 'message': 'Updated'}
@@ -192,16 +201,17 @@ def update_perangkat_desa(desa, no_urut, field, new_value):
              if cell.col == 8:
                  urut = ws.cell(cell.row, 11).value
                  if str(urut).strip() == str(no_urut).strip():
-                     field_col_map = {'NAMA_LENGKAP': 12, 'NIK': 13, 'JENIS_KELAMIN': 14, 'JABATAN': 15, 'NO_HP': 16}
+                     field_col_map = {'NO_DESA': 7, 'NAMA_LENGKAP': 12, 'NIK': 13, 'JENIS_KELAMIN': 14, 'JABATAN': 15, 'NO_HP': 16}
                      c_idx = field_col_map.get(field)
                      if c_idx:
                          ws.update_cell(cell.row, c_idx, new_value)
                          
                          # SYNC: Check if this was Kepala Desa
-                         if field == 'NAMA_LENGKAP':
+                         sync_fields = ['NO_DESA', 'NAMA_LENGKAP', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP']
+                         if field in sync_fields:
                              jabatan = ws.cell(cell.row, 15).value
                              if jabatan and str(jabatan).strip().upper() in ['KEPALA DESA', 'PJ. KEPALA DESA']:
-                                 _sync_geuchik_name_across_files(desa, new_value)
+                                 _sync_geuchik_data_across_files(desa, {field: new_value})
                                  
                          clear_cache()
                          return {'success': True}
@@ -287,9 +297,14 @@ def update_geuchik_detail_all(desa, data):
                 if col_idx and value is not None:
                      ws.update_cell(row, col_idx, value)
             
-            # SYNC: Check if Name is updated
-            if 'NAMA_LENGKAP' in data and data['NAMA_LENGKAP']:
-                _sync_geuchik_name_across_files(desa, data['NAMA_LENGKAP'])
+            # SYNC: Sync all relevant fields
+            sync_fields = {}
+            for k in ['NO_DESA', 'NAMA_LENGKAP', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP']:
+                if k in data and data[k]:
+                     sync_fields[k] = data[k]
+            
+            if sync_fields:
+                 _sync_geuchik_data_across_files(desa, sync_fields)
             
             clear_cache()
             return {'success': True}
@@ -313,8 +328,7 @@ def update_perangkat_desa_all(desa, data_list):
         desa_rows = {c.row: c for c in cells if c.col == 8}
         
         updated_count = 0
-        sync_needed = False
-        new_geuchik_name = None
+        sync_payload = {}
         
         for item in data_list:
             target_no = str(item.get('NO_URUT')).strip()
@@ -326,7 +340,7 @@ def update_perangkat_desa_all(desa, data_list):
                     break
             
             if target_row:
-                # Check Jabatan BEFORE update to see if it's Kepdes
+                # Check Jabatan BEFORE update
                 jabatan = ws.cell(target_row, 15).value
                 is_kepdes = jabatan and str(jabatan).strip().upper() in ['KEPALA DESA', 'PJ. KEPALA DESA']
                 
@@ -335,14 +349,13 @@ def update_perangkat_desa_all(desa, data_list):
                     if col and val is not None:
                          ws.update_cell(target_row, col, val)
                          
-                         if is_kepdes and field == 'NAMA_LENGKAP':
-                             sync_needed = True
-                             new_geuchik_name = val
+                         if is_kepdes and field in ['NO_DESA', 'NAMA_LENGKAP', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP']:
+                             sync_payload[field] = val
                              
                 updated_count += 1
         
-        if sync_needed and new_geuchik_name:
-            _sync_geuchik_name_across_files(desa, new_geuchik_name)
+        if sync_payload:
+            _sync_geuchik_data_across_files(desa, sync_payload)
         
         clear_cache()
         return {'success': True, 'updated': updated_count}
