@@ -70,21 +70,33 @@ file_info = {
 }
 
 
-def get_excel_download(df):
-    """Get Excel file as bytes from DataFrame"""
-    output = BytesIO()
-    with pd.ExcelWriter(output, engine='openpyxl') as writer:
-        df.to_excel(writer, index=False, sheet_name='Sheet1')
-    return output.getvalue()
+from utils.excel_exporter import ExcelExporter
 
+# Initialize exporter with current directory as base path (where templates are)
+exporter = ExcelExporter(Path(__file__).parent.parent)
+
+def get_excel_download(key, df):
+    """Get Excel file as bytes using template exporter"""
+    try:
+        if key == 'camat_mukim_geuchik':
+            return exporter.export_camat_mukim_geuchik(df)
+        elif key == 'geuchik_detail':
+            return exporter.export_geuchik_detail(df)
+        elif key == 'perangkat_desa':
+            return exporter.export_perangkat_desa(df)
+        elif key == 'tuha_peuet':
+            return exporter.export_tuha_peuet(df)
+    except Exception as e:
+        st.error(f"Error exporting {key}: {e}")
+        return None
 
 # Export section
 st.subheader("📂 Pilih File untuk Diunduh")
 
 st.markdown("""
 <div style="padding: 15px; background: rgba(52, 152, 219, 0.1); border-radius: 8px; border-left: 3px solid #3498DB; margin-bottom: 20px;">
-    <p style="color: #E0E0E0; margin: 0;"><strong>ℹ️ Data Real-time</strong><br>
-    <span style="color: #BDC3C7;">File yang diunduh berisi data terbaru.</span></p>
+    <p style="color: #E0E0E0; margin: 0;"><strong>ℹ️ Format Asli</strong><br>
+    <span style="color: #BDC3C7;">File yang diunduh menggunakan format Excel asli desa.</span></p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -106,14 +118,22 @@ for i, (key, info) in enumerate(file_info.items()):
         df = all_data.get(key)
         
         if df is not None and not df.empty:
-            excel_data = get_excel_download(df)
-            st.download_button(
-                label=f"⬇️ Unduh Excel",
-                data=excel_data,
-                file_name=info['filename'],
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                key=f"download_{key}"
-            )
+            # Generate download button
+            # We need to process the export on click or pre-calculate?
+            # Streamlit download button requires data to be ready.
+            # Calculating on the fly might be slow if data is large but it ensures fresh data.
+            # Let's generate it.
+            
+            excel_data = get_excel_download(key, df)
+            
+            if excel_data:
+                st.download_button(
+                    label=f"⬇️ Unduh Excel",
+                    data=excel_data,
+                    file_name=info['filename'],
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    key=f"download_{key}"
+                )
         else:
             st.warning(f"⚠️ Data tidak tersedia")
 
