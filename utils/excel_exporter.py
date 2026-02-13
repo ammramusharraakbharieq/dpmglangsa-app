@@ -127,32 +127,39 @@ class ExcelExporter:
 
 
     def export_perangkat_desa(self, df):
-        filename = "data_(kepala desa & perangkat desa).xlsx"
+        # USE NEW TEMPLATE (Created from User Upload)
+        filename = "template_perangkat_desa_new.xlsx"
         wb = self._load_template(filename)
         ws = wb.active
-        start_row = 6
+        
+        # Start Row usually 4 based on analysis of the new file
+        # (Row 1-3 are headers, Row 4 is first data)
+        start_row = 4
+        
+        # Clear existing data in template (it has data!)
+        # Columns A to P (1 to 16)
         self._clear_data(ws, start_row, 16)
 
-        # Mapping based on analysis:
-        # Col 1(A): NO (Global Kades Count 1,2,3...) OR Empty?
-        # Wait, Analysis Row 6: '11', 'ACEH'... -> These are Cols A..H
-        # Col 11(K): NO (Urut 1..10)
-        # Col 12(L): NAMA
-        # Col 13(M): NIK
-        # Col 14(N): JK
-        # Col 15(O): JABATAN
-        # Col 16(P): HP
-        
-        # Grouping Logic:
-        # For each DESA, the first row (Kepala Desa) has info in A-H.
-        # Subsquent rows (Perangkat) have A-H empty.
+        # Mapping based on analysis of uploaded file:
+        # Col 1 (A): NO_PROV
+        # Col 2 (B): PROVINSI
+        # Col 3 (C): NO_KAB
+        # Col 4 (D): KABUPATEN
+        # Col 5 (E): NO_KEC
+        # Col 6 (F): KECAMATAN
+        # Col 7 (G): NO_DESA
+        # Col 8 (H): DESA
+        # Col 9 (I): Unnamed/Spacer (Status A/B?) -> In previous code this was Col 9.
+        # Col 10 (J): Unnamed/Spacer (Jabatan Group?) -> In previous code this was Col 10.
+        # Col 11 (K): NO (Urut)
+        # Col 12 (L): NAMA LENGKAP
+        # Col 13 (M): NIK
+        # Col 14 (N): JK
+        # Col 15 (O): JABATAN
+        # Col 16 (P): HP
         
         current_row = start_row
         last_desa = None
-        
-        # Data loaded from Sheet might not be sorted by Desa, 
-        # causing "New Desa" logic to trigger multiple times if data is scattered.
-        # We MUST sort the DataFrame to ensuring grouping.
         
         # Sort by NO_KEC, NO_DESA, DESA, then NO_URUT
         # First ensure NO_URUT is numeric
@@ -160,14 +167,12 @@ class ExcelExporter:
         
         # KEY FIX: Filter out "Ghost Rows" (result of ffill on empty source rows)
         # ONLY remove if BOTH Name AND Jabatan are empty/null.
-        # Previously we removed rows with just empty names, which killed valid vacant positions.
+        # PRESERVES valid vacant positions (Name empty, Jabatan filled)
         if 'NAMA_LENGKAP' in df.columns and 'JABATAN' in df.columns:
-             # Convert to string and handle NaN
              name_str = df['NAMA_LENGKAP'].fillna('').astype(str).str.strip()
              jabatan_str = df['JABATAN'].fillna('').astype(str).str.strip()
              
              # Keep row if it has Name OR Jabatan content
-             # This removes only the true empty rows that cause gaps/misalignment
              df = df[(name_str != '') | (jabatan_str != '')]
 
         # Sort!
@@ -183,9 +188,14 @@ class ExcelExporter:
             desa = row.get('DESA')
             is_new_desa = (desa != last_desa)
             
+            # --- VILLAGE BLOCK HEADERS (Cols A-H) ---
+            # Grouping Logic: Only write Village info on the FIRST row of the village
+            # This mimics the "Merge" look without actually merging cells (which complicates sorting/filtering later)
+            # OR should we fill every row? 
+            # The previous code (and typical requirement for sorting) is 
+            # to Fill A-H only on 'is_new_desa'.
+            
             if is_new_desa:
-
-                # Fill A-H (1-8)
                 ws.cell(row=current_row, column=1, value=row.get('NO_PROV'))
                 ws.cell(row=current_row, column=2, value=row.get('PROVINSI'))
                 ws.cell(row=current_row, column=3, value=row.get('NO_KAB'))
@@ -196,39 +206,38 @@ class ExcelExporter:
                 ws.cell(row=current_row, column=8, value=desa)
                 last_desa = desa
             
-            # Helper for Kategori/Jenis (Not in DF explicitly as clean cols sometimes)
-            # Based on Jabatan? 
-            # In original file:
-            # Row 6: 'A', 'Kades ', '1', ... JABATAN='PJ. KEPALA DESA'
-            # Row 7: 'B', 'Prangkat ', '2', ... JABATAN='SEKRETARIS DESA'
+            # --- STATUS/GROUP COLUMNS (Cols I-J) ---
+            # Col 9 (I): A/B code
+            # Col 10 (J): Kades/Prangkat label
             
             jabatan_raw = row.get('JABATAN')
-            if pd.isna(jabatan_raw) or str(jabatan_raw).strip() == '':
-                 # Empty row (separator), do nothing for cols 9-16
-                 current_row += 1
+            # Extra safety check for empty rows, though filter above handles it
+            if (pd.isna(jabatan_raw) or str(jabatan_raw).strip() == '') and \
+               (pd.isna(row.get('NAMA_LENGKAP')) or str(row.get('NAMA_LENGKAP')).strip() == ''):
                  continue
 
-            jabatan = str(jabatan_raw).upper()
+            jabatan = str(jabatan_raw).upper() if pd.notna(jabatan_raw) else ''
             
             if 'KEPALA DESA' in jabatan or 'PJ. KEPALA DESA' in jabatan:
                 ws.cell(row=current_row, column=9, value='A')
                 ws.cell(row=current_row, column=10, value='Kades')
             elif 'KADUS' in jabatan or 'KEPALA DUSUN' in jabatan:
                 ws.cell(row=current_row, column=9, value='B')
-                ws.cell(row=current_row, column=10, value='Prangkat') # Changed from K. Dusun
+                ws.cell(row=current_row, column=10, value='Prangkat')
             else:
                 ws.cell(row=current_row, column=9, value='B')
                 ws.cell(row=current_row, column=10, value='Prangkat')
 
-            # Fill K-P (11-16)
+            # --- PERSON DATA (Cols K-P) ---
             ws.cell(row=current_row, column=11, value=row.get('NO_URUT'))
             ws.cell(row=current_row, column=12, value=row.get('NAMA_LENGKAP'))
-            # NIK might be loaded as float/int, ensure string
+            
             nik = row.get('NIK')
             ws.cell(row=current_row, column=13, value=str(nik) if pd.notna(nik) else '')
+            
             ws.cell(row=current_row, column=14, value=row.get('JENIS_KELAMIN'))
             ws.cell(row=current_row, column=15, value=row.get('JABATAN'))
-            # HP might be float/int, ensure string
+            
             hp = row.get('NO_HP')
             ws.cell(row=current_row, column=16, value=str(hp) if pd.notna(hp) else '')
 
