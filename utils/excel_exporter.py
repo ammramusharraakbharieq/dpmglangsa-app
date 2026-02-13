@@ -150,15 +150,28 @@ class ExcelExporter:
         current_row = start_row
         last_desa = None
         
-        # Sort DF by Kecamatan -> Kemukiman -> Gampong -> No Urut to ensure grouping
-        # DF loaded from data_loader might already be sorted but let's be safe if possible
-        # However, data_loader.load_perangkat_desa filters and sorts broadly.
+        # Data loaded from Sheet might not be sorted by Desa, 
+        # causing "New Desa" logic to trigger multiple times if data is scattered.
+        # We MUST sort the DataFrame to ensuring grouping.
+        
+        # Sort by NO_KEC, NO_DESA, NO_URUT (Numeric)
+        # First ensure NO_URUT is numeric
+        df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
+        
+        # Sort!
+        sort_cols = []
+        if 'NO_KEC' in df.columns: sort_cols.append('NO_KEC')
+        if 'NO_DESA' in df.columns: sort_cols.append('NO_DESA')
+        sort_cols.append('NO_URUT_NUM')
+        
+        df = df.sort_values(by=sort_cols)
         
         for index, row in df.iterrows():
             desa = row.get('DESA')
             is_new_desa = (desa != last_desa)
             
             if is_new_desa:
+
                 # Fill A-H (1-8)
                 ws.cell(row=current_row, column=1, value=row.get('NO_PROV'))
                 ws.cell(row=current_row, column=2, value=row.get('PROVINSI'))
