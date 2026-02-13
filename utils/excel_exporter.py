@@ -159,10 +159,16 @@ class ExcelExporter:
         df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
         
         # KEY FIX: Filter out "Ghost Rows" (result of ffill on empty source rows)
-        # These rows have Village info but no Person info (Name/Jabatan is empty)
-        if 'NAMA_LENGKAP' in df.columns:
-             # Remove rows where Name is null or empty string
-             df = df[df['NAMA_LENGKAP'].notna() & (df['NAMA_LENGKAP'].astype(str).str.strip() != '')]
+        # ONLY remove if BOTH Name AND Jabatan are empty/null.
+        # Previously we removed rows with just empty names, which killed valid vacant positions.
+        if 'NAMA_LENGKAP' in df.columns and 'JABATAN' in df.columns:
+             # Convert to string and handle NaN
+             name_str = df['NAMA_LENGKAP'].fillna('').astype(str).str.strip()
+             jabatan_str = df['JABATAN'].fillna('').astype(str).str.strip()
+             
+             # Keep row if it has Name OR Jabatan content
+             # This removes only the true empty rows that cause gaps/misalignment
+             df = df[(name_str != '') | (jabatan_str != '')]
 
         # Sort!
         sort_cols = []
