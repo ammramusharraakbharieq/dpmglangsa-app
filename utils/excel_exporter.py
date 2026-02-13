@@ -154,10 +154,16 @@ class ExcelExporter:
         # causing "New Desa" logic to trigger multiple times if data is scattered.
         # We MUST sort the DataFrame to ensuring grouping.
         
-        # Sort by NO_KEC, NO_DESA, NO_URUT (Numeric)
+        # Sort by NO_KEC, NO_DESA, DESA, then NO_URUT
         # First ensure NO_URUT is numeric
         df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
         
+        # KEY FIX: Filter out "Ghost Rows" (result of ffill on empty source rows)
+        # These rows have Village info but no Person info (Name/Jabatan is empty)
+        if 'NAMA_LENGKAP' in df.columns:
+             # Remove rows where Name is null or empty string
+             df = df[df['NAMA_LENGKAP'].notna() & (df['NAMA_LENGKAP'].astype(str).str.strip() != '')]
+
         # Sort!
         sort_cols = []
         if 'NO_KEC' in df.columns: sort_cols.append('NO_KEC')
