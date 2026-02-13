@@ -53,11 +53,12 @@ class ExcelExporter:
             current_row = start_row + index
             ws.cell(row=current_row, column=1, value=index + 1) # NO
             ws.cell(row=current_row, column=2, value=row.get('KECAMATAN'))
-            ws.cell(row=current_row, column=3, value=row.get('NAMA_CAMAT'))
+            # Corrected keys based on data_loader (from Excel Header)
+            ws.cell(row=current_row, column=3, value=row.get('NAMA CAMAT'))
             ws.cell(row=current_row, column=4, value=row.get('KEMUKIMAN'))
-            ws.cell(row=current_row, column=5, value=row.get('NAMA_MUKIM'))
+            ws.cell(row=current_row, column=5, value=row.get('NAMA MUKIM'))
             ws.cell(row=current_row, column=6, value=row.get('GAMPONG'))
-            ws.cell(row=current_row, column=7, value=row.get('NAMA_GEUCHIK'))
+            ws.cell(row=current_row, column=7, value=row.get('NAMA GEUCHIK'))
 
         output = BytesIO()
         wb.save(output)
