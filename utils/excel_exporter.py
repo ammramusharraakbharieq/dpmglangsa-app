@@ -21,24 +21,22 @@ class ExcelExporter:
         return wb
 
     def _clear_data(self, ws, start_row, end_col):
-        """Clear data from start_row downwards, keeping style"""
-        # Note: clearing cells one by one preserves style better than deleting rows
-        # But for performance on large sheets, deleting rows might be needed.
-        # Given the user wants to preserve structure/style, we should be careful.
-        # Does openpyxl delete_rows keep style of rows below? No, it shifts them up.
-        # But we are at the end of the sheet usually.
+        """Clear data from start_row downwards, preserving row structure/style"""
+        # Instead of deleting rows (which shifts things up and can break merged headers),
+        # we iterate and clear values individually.
         
         max_row = ws.max_row
         if max_row >= start_row:
-            # We can delete rows from start_row to max_row
-            # But wait, sometimes there are footers? Assuming no footers for now based on analysis.
-            ws.delete_rows(start_row, amount=(max_row - start_row + 1))
+            # Iterate row by row is safer.
+            for row in range(start_row, max_row + 1):
+                for col in range(1, end_col + 1):
+                    ws.cell(row=row, column=col).value = None
 
     def export_camat_mukim_geuchik(self, df):
         filename = "data_(camat,mukim,dan geuchik).xlsx"
         wb = self._load_template(filename)
         ws = wb.active
-        start_row = 2
+        start_row = 2 # Start clearing from Row 2
 
         self._clear_data(ws, start_row, 7)
 

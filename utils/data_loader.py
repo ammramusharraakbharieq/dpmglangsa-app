@@ -155,8 +155,14 @@ def load_perangkat_desa():
             'NIK', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP'
         ]
         
-        # Original: df.iloc[5:].copy() (skipping 5 header rows: 0, 1, 2, 3, 4)
-        df_data = df.iloc[5:].copy()
+        # Original: df.iloc[5:].copy() (skipping too many rows!)
+        # The data actually starts at Index 3 (Row 4 in Excel, after Headers at Index 2)
+        # load_raw_data_from_sheet uses header=None
+        # Index 0: Row 1
+        # Index 1: Row 2
+        # Index 2: Header (Provinsi, etc.)
+        # Index 3: First Data (Aceh...)
+        df_data = df.iloc[3:].copy()
         
         # Take only required columns
         df_data = df_data.iloc[:, :len(columns)]
