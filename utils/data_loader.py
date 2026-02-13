@@ -123,6 +123,15 @@ def load_geuchik_detail():
         df_data = df_data.iloc[:, :len(columns)]
         
         df_data.columns = columns
+        
+        # FIX: Forward fill grouping columns (PROV, KAB, KEC, DESA)
+        # to ensure every row has its parent ID, critical for sorting
+        import numpy as np
+        group_cols = ['NO_PROV', 'PROVINSI', 'NO_KAB', 'KABUPATEN', 'NO_KEC', 'KECAMATAN', 'NO_DESA', 'DESA']
+        # Convert empty strings to NaN then ffill
+        df_data[group_cols] = df_data[group_cols].replace(r'^\s*$', np.nan, regex=True)
+        df_data[group_cols] = df_data[group_cols].ffill()
+        
         df_data = df_data.reset_index(drop=True)
         
         return df_data
