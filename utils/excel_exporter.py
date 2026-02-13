@@ -170,18 +170,29 @@ class ExcelExporter:
                 ws.cell(row=current_row, column=8, value=desa)
                 last_desa = desa
             
-            # Fill I-J (9-10) [Kategori & Jenis]
-            # Logic: If it's KEPALA DESA -> A, Kades. Else -> B, Prangkat/K. Dusun
-            jabatan = str(row.get('JABATAN', '')).upper()
+            # Helper for Kategori/Jenis (Not in DF explicitly as clean cols sometimes)
+            # Based on Jabatan? 
+            # In original file:
+            # Row 6: 'A', 'Kades ', '1', ... JABATAN='PJ. KEPALA DESA'
+            # Row 7: 'B', 'Prangkat ', '2', ... JABATAN='SEKRETARIS DESA'
+            
+            jabatan_raw = row.get('JABATAN')
+            if pd.isna(jabatan_raw) or str(jabatan_raw).strip() == '':
+                 # Empty row (separator), do nothing for cols 9-16
+                 current_row += 1
+                 continue
+
+            jabatan = str(jabatan_raw).upper()
+            
             if 'KEPALA DESA' in jabatan or 'PJ. KEPALA DESA' in jabatan:
                 ws.cell(row=current_row, column=9, value='A')
                 ws.cell(row=current_row, column=10, value='Kades')
             elif 'KADUS' in jabatan or 'KEPALA DUSUN' in jabatan:
                 ws.cell(row=current_row, column=9, value='B')
-                ws.cell(row=current_row, column=10, value='K. Dusun')
+                ws.cell(row=current_row, column=10, value='Prangkat') # Changed from K. Dusun
             else:
                 ws.cell(row=current_row, column=9, value='B')
-                ws.cell(row=current_row, column=10, value='Perangkat')
+                ws.cell(row=current_row, column=10, value='Prangkat')
 
             # Fill K-P (11-16)
             ws.cell(row=current_row, column=11, value=row.get('NO_URUT'))
