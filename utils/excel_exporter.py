@@ -162,6 +162,7 @@ class ExcelExporter:
         sort_cols = []
         if 'NO_KEC' in df.columns: sort_cols.append('NO_KEC')
         if 'NO_DESA' in df.columns: sort_cols.append('NO_DESA')
+        if 'DESA' in df.columns: sort_cols.append('DESA') # Vital: Sort by Name too in case IDs are dupes
         sort_cols.append('NO_URUT_NUM')
         
         df = df.sort_values(by=sort_cols)
