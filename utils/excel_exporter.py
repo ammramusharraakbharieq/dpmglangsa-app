@@ -24,27 +24,27 @@ class ExcelExporter:
         """Clear data from start_row downwards, preserving row structure/style"""
         from openpyxl.cell import MergedCell
         
-        # KEY FIX: Unmerge all cells in the data area first!
-        # Writing to a merged cell (except top-left) raises ReadOnly error.
-        # Since we are overwriting data, we should flatten the structure in the data area.
-        
-        # Find ranges to unmerge
+        # KEY FIX 2: Explicitly find all merged ranges in data area and unmerge them
+        # We must collect them first to avoid iterator modification issues
         ranges_to_unmerge = []
-        for merged_range in ws.merged_cells.ranges:
-            # Check if range intersects with our data area (row >= start_row)
+        for merged_range in list(ws.merged_cells.ranges): # Use list() to copy
             if merged_range.min_row >= start_row:
                 ranges_to_unmerge.append(merged_range)
         
-        # Unmerge them
         for merged_range in ranges_to_unmerge:
-            ws.unmerge_cells(str(merged_range))
+            try:
+                ws.unmerge_cells(str(merged_range))
+            except KeyError:
+                pass # Already unmerged or not found
 
         max_row = ws.max_row
         if max_row >= start_row:
-            # Iterate row by row
             for row in range(start_row, max_row + 1):
                 for col in range(1, end_col + 1):
                     cell = ws.cell(row=row, column=col)
+                    # Double check: if it's still a merged cell (e.g. from above header), skip it
+                    if isinstance(cell, MergedCell):
+                        continue # Don't touch header-merged cells!
                     cell.value = None
 
     def export_camat_mukim_geuchik(self, df):
@@ -146,53 +146,42 @@ class ExcelExporter:
         ws = wb.active
         
         # Start Row usually 4 based on analysis of the new file
-        # (Row 1-3 are headers, Row 4 is first data)
         start_row = 4
         
         # Clear existing data in template (it has data!)
         # Columns A to P (1 to 16)
         self._clear_data(ws, start_row, 16)
+        
+        from openpyxl.cell import MergedCell
+
+        def safe_write(r, c, val):
+            """Helper to write to cell only if it's NOT a merged cell (read-only)"""
+            cell = ws.cell(row=r, column=c)
+            if isinstance(cell, MergedCell):
+                return # Skip writing to merged cells
+            cell.value = val
 
         # Mapping based on analysis of uploaded file:
         # Col 1 (A): NO_PROV
-        # Col 2 (B): PROVINSI
-        # Col 3 (C): NO_KAB
-        # Col 4 (D): KABUPATEN
-        # Col 5 (E): NO_KEC
-        # Col 6 (F): KECAMATAN
-        # Col 7 (G): NO_DESA
-        # Col 8 (H): DESA
-        # Col 9 (I): Unnamed/Spacer (Status A/B?) -> In previous code this was Col 9.
-        # Col 10 (J): Unnamed/Spacer (Jabatan Group?) -> In previous code this was Col 10.
-        # Col 11 (K): NO (Urut)
-        # Col 12 (L): NAMA LENGKAP
-        # Col 13 (M): NIK
-        # Col 14 (N): JK
-        # Col 15 (O): JABATAN
-        # Col 16 (P): HP
+        # ... (same as before) ...
         
         current_row = start_row
         last_desa = None
         
         # Sort by NO_KEC, NO_DESA, DESA, then NO_URUT
-        # First ensure NO_URUT is numeric
         df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
         
-        # KEY FIX: Filter out "Ghost Rows" (result of ffill on empty source rows)
-        # ONLY remove if BOTH Name AND Jabatan are empty/null.
-        # PRESERVES valid vacant positions (Name empty, Jabatan filled)
+        # KEY FIX: Filter out "Ghost Rows" 
         if 'NAMA_LENGKAP' in df.columns and 'JABATAN' in df.columns:
              name_str = df['NAMA_LENGKAP'].fillna('').astype(str).str.strip()
              jabatan_str = df['JABATAN'].fillna('').astype(str).str.strip()
-             
-             # Keep row if it has Name OR Jabatan content
              df = df[(name_str != '') | (jabatan_str != '')]
 
         # Sort!
         sort_cols = []
         if 'NO_KEC' in df.columns: sort_cols.append('NO_KEC')
         if 'NO_DESA' in df.columns: sort_cols.append('NO_DESA')
-        if 'DESA' in df.columns: sort_cols.append('DESA') # Vital: Sort by Name too in case IDs are dupes
+        if 'DESA' in df.columns: sort_cols.append('DESA') 
         sort_cols.append('NO_URUT_NUM')
         
         df = df.sort_values(by=sort_cols)
@@ -201,30 +190,18 @@ class ExcelExporter:
             desa = row.get('DESA')
             is_new_desa = (desa != last_desa)
             
-            # --- VILLAGE BLOCK HEADERS (Cols A-H) ---
-            # Grouping Logic: Only write Village info on the FIRST row of the village
-            # This mimics the "Merge" look without actually merging cells (which complicates sorting/filtering later)
-            # OR should we fill every row? 
-            # The previous code (and typical requirement for sorting) is 
-            # to Fill A-H only on 'is_new_desa'.
-            
             if is_new_desa:
-                ws.cell(row=current_row, column=1, value=row.get('NO_PROV'))
-                ws.cell(row=current_row, column=2, value=row.get('PROVINSI'))
-                ws.cell(row=current_row, column=3, value=row.get('NO_KAB'))
-                ws.cell(row=current_row, column=4, value=row.get('KABUPATEN'))
-                ws.cell(row=current_row, column=5, value=row.get('NO_KEC'))
-                ws.cell(row=current_row, column=6, value=row.get('KECAMATAN'))
-                ws.cell(row=current_row, column=7, value=row.get('NO_DESA'))
-                ws.cell(row=current_row, column=8, value=desa)
+                safe_write(current_row, 1, row.get('NO_PROV'))
+                safe_write(current_row, 2, row.get('PROVINSI'))
+                safe_write(current_row, 3, row.get('NO_KAB'))
+                safe_write(current_row, 4, row.get('KABUPATEN'))
+                safe_write(current_row, 5, row.get('NO_KEC'))
+                safe_write(current_row, 6, row.get('KECAMATAN'))
+                safe_write(current_row, 7, row.get('NO_DESA'))
+                safe_write(current_row, 8, desa)
                 last_desa = desa
             
-            # --- STATUS/GROUP COLUMNS (Cols I-J) ---
-            # Col 9 (I): A/B code
-            # Col 10 (J): Kades/Prangkat label
-            
             jabatan_raw = row.get('JABATAN')
-            # Extra safety check for empty rows, though filter above handles it
             if (pd.isna(jabatan_raw) or str(jabatan_raw).strip() == '') and \
                (pd.isna(row.get('NAMA_LENGKAP')) or str(row.get('NAMA_LENGKAP')).strip() == ''):
                  continue
@@ -232,27 +209,26 @@ class ExcelExporter:
             jabatan = str(jabatan_raw).upper() if pd.notna(jabatan_raw) else ''
             
             if 'KEPALA DESA' in jabatan or 'PJ. KEPALA DESA' in jabatan:
-                ws.cell(row=current_row, column=9, value='A')
-                ws.cell(row=current_row, column=10, value='Kades')
+                safe_write(current_row, 9, 'A')
+                safe_write(current_row, 10, 'Kades')
             elif 'KADUS' in jabatan or 'KEPALA DUSUN' in jabatan:
-                ws.cell(row=current_row, column=9, value='B')
-                ws.cell(row=current_row, column=10, value='Prangkat')
+                safe_write(current_row, 9, 'B')
+                safe_write(current_row, 10, 'Prangkat')
             else:
-                ws.cell(row=current_row, column=9, value='B')
-                ws.cell(row=current_row, column=10, value='Prangkat')
+                safe_write(current_row, 9, 'B')
+                safe_write(current_row, 10, 'Prangkat')
 
-            # --- PERSON DATA (Cols K-P) ---
-            ws.cell(row=current_row, column=11, value=row.get('NO_URUT'))
-            ws.cell(row=current_row, column=12, value=row.get('NAMA_LENGKAP'))
+            safe_write(current_row, 11, row.get('NO_URUT'))
+            safe_write(current_row, 12, row.get('NAMA_LENGKAP'))
             
             nik = row.get('NIK')
-            ws.cell(row=current_row, column=13, value=str(nik) if pd.notna(nik) else '')
+            safe_write(current_row, 13, str(nik) if pd.notna(nik) else '')
             
-            ws.cell(row=current_row, column=14, value=row.get('JENIS_KELAMIN'))
-            ws.cell(row=current_row, column=15, value=row.get('JABATAN'))
+            safe_write(current_row, 14, row.get('JENIS_KELAMIN'))
+            safe_write(current_row, 15, row.get('JABATAN'))
             
             hp = row.get('NO_HP')
-            ws.cell(row=current_row, column=16, value=str(hp) if pd.notna(hp) else '')
+            safe_write(current_row, 16, str(hp) if pd.notna(hp) else '')
 
             current_row += 1
 
