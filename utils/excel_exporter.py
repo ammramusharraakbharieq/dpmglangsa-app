@@ -24,15 +24,27 @@ class ExcelExporter:
         """Clear data from start_row downwards, preserving row structure/style"""
         from openpyxl.cell import MergedCell
         
+        # KEY FIX: Unmerge all cells in the data area first!
+        # Writing to a merged cell (except top-left) raises ReadOnly error.
+        # Since we are overwriting data, we should flatten the structure in the data area.
+        
+        # Find ranges to unmerge
+        ranges_to_unmerge = []
+        for merged_range in ws.merged_cells.ranges:
+            # Check if range intersects with our data area (row >= start_row)
+            if merged_range.min_row >= start_row:
+                ranges_to_unmerge.append(merged_range)
+        
+        # Unmerge them
+        for merged_range in ranges_to_unmerge:
+            ws.unmerge_cells(str(merged_range))
+
         max_row = ws.max_row
         if max_row >= start_row:
             # Iterate row by row
             for row in range(start_row, max_row + 1):
                 for col in range(1, end_col + 1):
                     cell = ws.cell(row=row, column=col)
-                    # Skip MergedCells (read-only)
-                    if isinstance(cell, MergedCell):
-                        continue
                     cell.value = None
 
     def export_camat_mukim_geuchik(self, df):
