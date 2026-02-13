@@ -146,7 +146,9 @@ class ExcelExporter:
         ws = wb.active
         
         # Start Row usually 4 based on analysis of the new file
-        start_row = 4
+        # Wait, Step 1284 shows Row 4 (Index 3) has "NO", "NAMA"... It is HEADER!
+        # Data starts at Row 5.
+        start_row = 5
         
         # Clear existing data in template (it has data!)
         # Columns A to P (1 to 16)
