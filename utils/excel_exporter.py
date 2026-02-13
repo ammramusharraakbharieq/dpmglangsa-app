@@ -22,15 +22,18 @@ class ExcelExporter:
 
     def _clear_data(self, ws, start_row, end_col):
         """Clear data from start_row downwards, preserving row structure/style"""
-        # Instead of deleting rows (which shifts things up and can break merged headers),
-        # we iterate and clear values individually.
+        from openpyxl.cell import MergedCell
         
         max_row = ws.max_row
         if max_row >= start_row:
-            # Iterate row by row is safer.
+            # Iterate row by row
             for row in range(start_row, max_row + 1):
                 for col in range(1, end_col + 1):
-                    ws.cell(row=row, column=col).value = None
+                    cell = ws.cell(row=row, column=col)
+                    # Skip MergedCells (read-only)
+                    if isinstance(cell, MergedCell):
+                        continue
+                    cell.value = None
 
     def export_camat_mukim_geuchik(self, df):
         filename = "data_(camat,mukim,dan geuchik).xlsx"
