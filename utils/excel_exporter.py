@@ -146,7 +146,7 @@ class ExcelExporter:
         ws = wb.active
         
         # Start Row usually 4 based on analysis of the new file
-        # Wait, Step 1284 shows Row 4 (Index 3) has "NO", "NAMA"... It is HEADER!
+        # (Row 1-3 are headers, Row 4 is header continuation)
         # Data starts at Row 5.
         start_row = 5
         
@@ -155,6 +155,7 @@ class ExcelExporter:
         self._clear_data(ws, start_row, 16)
         
         from openpyxl.cell import MergedCell
+        from openpyxl.styles import Alignment
 
         def safe_write(r, c, val):
             """Helper to write to cell only if it's NOT a merged cell (read-only)"""
@@ -169,6 +170,11 @@ class ExcelExporter:
         
         current_row = start_row
         last_desa = None
+        
+        # Grouping tracker: dictionary {desa_name: {'start': row, 'end': row}}
+        # usage: store start when new, update end every row
+        village_ranges = []
+        current_village_start = start_row
         
         # Sort by NO_KEC, NO_DESA, DESA, then NO_URUT
         df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
@@ -188,11 +194,24 @@ class ExcelExporter:
         
         df = df.sort_values(by=sort_cols)
         
+        # Reset last_desa to ensure first row triggers logic
+        last_desa = None
+        
         for index, row in df.iterrows():
             desa = row.get('DESA')
-            is_new_desa = (desa != last_desa)
             
-            if is_new_desa:
+            # Detect change
+            if desa != last_desa:
+                if last_desa is not None:
+                     # Close previous group
+                     village_ranges.append({
+                         'start': current_village_start,
+                         'end': current_row - 1
+                     })
+                current_village_start = current_row
+                last_desa = desa
+                
+                # Write Village Info ONLY on the first row of group (standard practice for merge)
                 safe_write(current_row, 1, row.get('NO_PROV'))
                 safe_write(current_row, 2, row.get('PROVINSI'))
                 safe_write(current_row, 3, row.get('NO_KAB'))
@@ -201,7 +220,9 @@ class ExcelExporter:
                 safe_write(current_row, 6, row.get('KECAMATAN'))
                 safe_write(current_row, 7, row.get('NO_DESA'))
                 safe_write(current_row, 8, desa)
-                last_desa = desa
+            else:
+                 # Same village, continue. Columns 1-8 left empty for this row (will be merged later)
+                 pass
             
             jabatan_raw = row.get('JABATAN')
             if (pd.isna(jabatan_raw) or str(jabatan_raw).strip() == '') and \
@@ -233,6 +254,33 @@ class ExcelExporter:
             safe_write(current_row, 16, str(hp) if pd.notna(hp) else '')
 
             current_row += 1
+            
+        # Append last group
+        if last_desa is not None:
+             village_ranges.append({
+                 'start': current_village_start,
+                 'end': current_row - 1
+             })
+             
+        # --- POST-PROCESSING: APPLY MERGES ---
+        # Merge Cols 1-8 for each village group
+        for grp in village_ranges:
+            start = grp['start']
+            end = grp['end']
+            if end > start: # Only merge if more than 1 row
+                for col in range(1, 9): # Cols A-H
+                    try:
+                        ws.merge_cells(start_row=start, start_column=col, end_row=end, end_column=col)
+                        # Apply alignment
+                        cell = ws.cell(row=start, column=col)
+                        cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+                    except Exception as e:
+                        print(f"Merge error at {start}-{end} col {col}: {e}")
+            elif end == start:
+                 # Single row, ensures alignment is still centered
+                 for col in range(1, 9):
+                     cell = ws.cell(row=start, column=col)
+                     cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
 
         output = BytesIO()
         wb.save(output)
