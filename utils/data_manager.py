@@ -197,10 +197,16 @@ def update_perangkat_desa(desa, no_urut, field, new_value):
     try:
          ws = get_worksheet("Perangkat_Desa")
          cells = ws.findall(desa)
+         
+         target_no = str(no_urut).strip()
+         if target_no.endswith(".0"): target_no = target_no[:-2]
+
          for cell in cells:
              if cell.col == 8:
-                 urut = ws.cell(cell.row, 11).value
-                 if str(urut).strip() == str(no_urut).strip():
+                 urut = str(ws.cell(cell.row, 11).value).strip()
+                 if urut.endswith(".0"): urut = urut[:-2]
+                 
+                 if urut == target_no:
                      field_col_map = {'NO_DESA': 7, 'NAMA_LENGKAP': 12, 'NIK': 13, 'JENIS_KELAMIN': 14, 'JABATAN': 15, 'NO_HP': 16}
                      c_idx = field_col_map.get(field)
                      if c_idx:
@@ -239,8 +245,12 @@ def add_kadus(data):
                 if 'tracking_desa' in locals() and tracking_desa.upper() == target_desa.upper():
                      if start_row_idx == -1: start_row_idx = i
                      last_row_idx = i
-                     if len(row) > 10 and str(row[10]).isdigit():
-                         max_no = max(max_no, int(row[10]))
+                     
+                     if len(row) > 10:
+                         val_str = str(row[10]).strip()
+                         if val_str.endswith(".0"): val_str = val_str[:-2]
+                         if val_str.isdigit():
+                             max_no = max(max_no, int(val_str))
         
         if start_row_idx == -1:
              return {'success': False, 'message': 'Desa not found'}
@@ -266,10 +276,16 @@ def delete_kadus(desa, no_urut):
     try:
         ws = get_worksheet("Perangkat_Desa")
         cells = ws.findall(desa)
+        
+        target_no = str(no_urut).strip()
+        if target_no.endswith(".0"): target_no = target_no[:-2]
+
         for cell in cells:
              if cell.col == 8:
-                 urut = ws.cell(cell.row, 11).value
-                 if str(urut).strip() == str(no_urut).strip():
+                 urut = str(ws.cell(cell.row, 11).value).strip()
+                 if urut.endswith(".0"): urut = urut[:-2]
+                 
+                 if urut == target_no:
                       ws.delete_rows(cell.row)
                       clear_cache()
                       return {'success': True}
@@ -314,7 +330,7 @@ def update_geuchik_detail_all(desa, data):
         return {'success': False, 'error': str(e)}
 
 def update_perangkat_desa_all(desa, data_list):
-    """Update multiple perangkat desa rows"""
+    """Update multiple perangkat desa rows with robust matching"""
     try:
         ws = get_worksheet("Perangkat_Desa")
         if not ws: return {'success': False, 'message': 'Sheet not found'}
@@ -324,20 +340,72 @@ def update_perangkat_desa_all(desa, data_list):
             'NIK': 13, 'JENIS_KELAMIN': 14, 'JABATAN': 15, 'NO_HP': 16
         }
         
+        # 1. Find all cells for this Desa (Column H / 8)
+        # We use a more robust search if strict match fails, but start with findall
         cells = ws.findall(desa)
-        desa_rows = {c.row: c for c in cells if c.col == 8}
+        desa_rows = [c.row for c in cells if c.col == 8]
+        
+        if not desa_rows:
+            return {'success': False, 'message': f'Desa "{desa}" tidak ditemukan di database.'}
+            
+        # 2. Batch fetch logic (Manual for now to be safe, but minimized)
+        # To avoid N*M calls, we read the NO_URUT column for these rows once?
+        # Better: Just loop through rows and read NO_URUT.
+        # But for max efficiency, we should read the whole block. 
+        # Given gspread limitations, let's just optimize the matching loop.
         
         updated_count = 0
         sync_payload = {}
         
+        # Pre-fetch NO_URUTs for candidate rows to avoid repeatedly calling API
+        # Dictionary: string_norm(no_urut) -> row_index
+        row_map = {}
+        
+        min_row = min(desa_rows)
+        max_row = max(desa_rows)
+        
+        # Fetch block of NO_URUT (Col 11)
+        # col 11 is 'K'. 
+        # We can fetch the specific range for speed: K{min}:K{max}
+        # But we need to map back to row index.
+        
+        try:
+             range_str = f"K{min_row}:K{max_row}"
+             urut_values = ws.get(range_str) # List of lists
+             
+             for i, val_row in enumerate(urut_values):
+                 # val_row is like ['1']
+                 if val_row:
+                     val = str(val_row[0]).strip()
+                     # NORMALIZE: "1.0" -> "1"
+                     if val.endswith(".0"): val = val[:-2]
+                     
+                     actual_row = min_row + i
+                     # Verify this row actually belongs to the desa (intersection with desa_rows)
+                     if actual_row in desa_rows:
+                         row_map[val] = actual_row
+                         
+        except Exception as e:
+            print(f"Error fetching batch NO_URUT: {e}")
+            # Fallback to slow individual check if batch fails
+            pass
+
         for item in data_list:
             target_no = str(item.get('NO_URUT')).strip()
-            target_row = None
-            for r_idx in desa_rows:
-                curr_no = str(ws.cell(r_idx, 11).value).strip()
-                if curr_no == target_no:
-                    target_row = r_idx
-                    break
+            if target_no.endswith(".0"): target_no = target_no[:-2]
+            
+            target_row = row_map.get(target_no)
+            
+            # Fallback/Retry if not found in batch map
+            if not target_row:
+                 for r_idx in desa_rows:
+                    curr_val = ws.cell(r_idx, 11).value
+                    curr_no = str(curr_val).strip()
+                    if curr_no.endswith(".0"): curr_no = curr_no[:-2]
+                    
+                    if curr_no == target_no:
+                        target_row = r_idx
+                        break
             
             if target_row:
                 # Check Jabatan BEFORE update
@@ -347,6 +415,13 @@ def update_perangkat_desa_all(desa, data_list):
                 for field, val in item.items():
                     col = field_col_map.get(field)
                     if col and val is not None:
+                         # Force string for phones/ids to prevent scientific notation
+                         if field in ['NO_HP', 'NIK']:
+                             val = str(val)
+                             if val.endswith(".0"): val = val[:-2] # clean float artifacts from pandas
+                             # Prepend ' to force text in Excel if needed? gspread usually handles it.
+                             # But let's just send the clean string.
+                         
                          ws.update_cell(target_row, col, val)
                          
                          if is_kepdes and field in ['NO_DESA', 'NAMA_LENGKAP', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP']:
@@ -356,6 +431,10 @@ def update_perangkat_desa_all(desa, data_list):
         
         if sync_payload:
             _sync_geuchik_data_across_files(desa, sync_payload)
+        
+        # CRITICAL: If updated_count is 0, warning
+        if updated_count == 0 and data_list:
+             return {'success': False, 'message': 'Gagal mencocokkan data (NO_URUT mismatch). Mohon refresh page.'}
         
         clear_cache()
         return {'success': True, 'updated': updated_count}
