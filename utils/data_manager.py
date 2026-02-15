@@ -8,13 +8,12 @@ Module untuk operasi CRUD dan integrasi cross-file di Google Sheets.
 import pandas as pd
 import streamlit as st
 import gspread
-from utils.data_loader import SPREADSHEET_NAME, get_gspread_client, load_raw_data_from_sheet
+from utils.data_loader import SPREADSHEET_NAME, get_gspread_client, invalidate_data_cache
 
 # We need to manually clear cache when updating data
 def clear_cache():
-    st.cache_data.clear()
-    # Explicitly clear the loader cache to be safe
-    load_raw_data_from_sheet.clear()
+    # Call the centralized cache invalidation
+    invalidate_data_cache()
 
 def get_worksheet(sheet_name):
     """Helper to get worksheet object"""

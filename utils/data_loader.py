@@ -406,3 +406,9 @@ def get_data_by_kecamatan(kecamatan):
         result['tuha_peuet'] = df4[df4['KECAMATAN'] == kecamatan]
     
     return result
+
+
+def invalidate_data_cache():
+    """Force clear all data caches"""
+    load_raw_data_from_sheet.clear()
+    st.cache_data.clear()
