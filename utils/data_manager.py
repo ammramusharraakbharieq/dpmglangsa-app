@@ -397,6 +397,7 @@ def update_perangkat_desa_all(desa, data_list):
                             
         updated_count = 0
         sync_payload = {}
+        cells_to_update = []
         
         for item in data_list:
             target_no = str(item.get('NO_URUT')).strip()
@@ -405,10 +406,15 @@ def update_perangkat_desa_all(desa, data_list):
             target_row = row_map.get(target_no)
             
             if target_row:
-                # Need to read JABATAN for sync check
-                current_jabatan_val = ws.cell(target_row, 15).value
+                # Need to read JABATAN for sync check (Optimized: Get from all_vals to avoid API call)
+                # all_vals index is target_row - 1
+                current_jabatan_val = ''
+                if target_row - 1 < len(all_vals) and len(all_vals[target_row-1]) > 14:
+                     current_jabatan_val = all_vals[target_row-1][14]
+                
                 is_kepdes = current_jabatan_val and str(current_jabatan_val).strip().upper() in ['KEPALA DESA', 'PJ. KEPALA DESA']
                 
+                row_updated = False
                 for field, val in item.items():
                     col = field_col_map.get(field)
                     if col and val is not None:
@@ -416,12 +422,19 @@ def update_perangkat_desa_all(desa, data_list):
                              val = str(val)
                              if val.endswith(".0"): val = val[:-2]
                          
-                         ws.update_cell(target_row, col, val)
+                         # Batch: Add to list instead of immediate call
+                         cells_to_update.append(gspread.Cell(target_row, col, val))
+                         row_updated = True
                          
                          if is_kepdes and field in ['NO_DESA', 'NAMA_LENGKAP', 'JENIS_KELAMIN', 'JABATAN', 'NO_HP']:
                              sync_payload[field] = val
-                             
-                updated_count += 1
+                
+                if row_updated:
+                    updated_count += 1
+        
+        # EXECUTE BATCH UPDATE
+        if cells_to_update:
+            ws.update_cells(cells_to_update, value_input_option='USER_ENTERED')
         
         if sync_payload:
             _sync_geuchik_data_across_files(desa, sync_payload)
@@ -430,7 +443,6 @@ def update_perangkat_desa_all(desa, data_list):
              return {'success': False, 'message': 'Gagal mencocokkan data. Mohon validasi nama desa.'}
         
         # VERIFICATION: Read back one value to ensure persistence
-        # This is critical for debugging why updates might fail silently
         if row_map and updated_count > 0:
             try:
                 # Pick the last item processed
@@ -453,13 +465,6 @@ def update_perangkat_desa_all(desa, data_list):
                          if actual_val.endswith(".0"): actual_val = actual_val[:-2]
                          
                          print(f"VERIFY: Row {res_row} Col {col_idx} | Expected: '{expected_val}' | Actual: '{actual_val}'")
-                         
-                         # Check update success (allow loose match for now, just to log)
-                         if actual_val != expected_val and expected_val != 'None':
-                              print("WARNING: Verification Mismatch!")
-                              # Don't fail the whole user request yet, but log it.
-                              # Actually, fail it if we are sure?
-                              # Let's trust gspread for now but logging is key.
             except Exception as e:
                 print(f"Verification Error: {e}")
 
@@ -474,34 +479,58 @@ def update_tuha_peuet_all(gampong, data_list):
         ws = get_worksheet("Tuha_Peuet")
         if not ws: return {'success': False, 'message': 'Sheet not found'}
         
-        cells = ws.findall(gampong)
-        gampong_rows = [c.row for c in cells if c.col == 6]
+        # Optimize: Read all once to avoid Read Quota issues
+        all_vals = ws.get_all_values()
+        
+        # Find rows for this Gampong (Column F / Index 5 for Gampong Name)
+        # Note: Merged cells might mean Gampong name is empty in subsequent rows if we trusted ffill logic elsewhere
+        # But here Tuha_Peuet usually has repeats or we rely on 'findall' logic which implies explicit values?
+        # The loader uses ffill so the raw sheet might have empty merged cells.
+        # Let's use the same ffill scan logic as Perangkat Desa to be safe.
+        
+        target_gampong = str(gampong).strip().upper()
+        gampong_row_map = {} # NO_ANGGOTA -> Row Index
+        
+        current_gampong = None
+        for i, row in enumerate(all_vals):
+            if len(row) > 5:
+                # Column 6 is Index 5
+                val_g = str(row[5]).strip()
+                if val_g: current_gampong = val_g
+                
+                if current_gampong and current_gampong.upper() == target_gampong:
+                    # Found a row for this gampong
+                    # NO_ANGGOTA is Column 7 / Index 6
+                    if len(row) > 6:
+                        no_anggota = str(row[6]).strip()
+                        if no_anggota:
+                            gampong_row_map[no_anggota] = i + 1 # 1-based index
+                            
+        cells_to_update = []
         
         for item in data_list:
             target_no = str(item.get('NO_ANGGOTA')).strip()
-            target_row = None
-            for r in gampong_rows:
-                curr = str(ws.cell(r, 7).value).strip()
-                if curr == target_no:
-                    target_row = r
-                    break
+            target_row = gampong_row_map.get(target_no)
             
             if target_row:
                 if 'NAMA_ANGGOTA' in item:
-                    ws.update_cell(target_row, 8, item['NAMA_ANGGOTA'])
+                    cells_to_update.append(gspread.Cell(target_row, 8, item['NAMA_ANGGOTA']))
                 
                 jk = item.get('JENIS_KELAMIN')
                 if jk:
                     if jk == 'L':
-                        ws.update_cell(target_row, 9, '✓') 
-                        ws.update_cell(target_row, 10, '') 
+                        cells_to_update.append(gspread.Cell(target_row, 9, '✓'))
+                        cells_to_update.append(gspread.Cell(target_row, 10, ''))
                     elif jk == 'P':
-                        ws.update_cell(target_row, 9, '')
-                        ws.update_cell(target_row, 10, '✓')
+                        cells_to_update.append(gspread.Cell(target_row, 9, ''))
+                        cells_to_update.append(gspread.Cell(target_row, 10, '✓'))
                 
                 if 'KETERANGAN' in item:
-                    ws.update_cell(target_row, 11, item['KETERANGAN'])
-
+                    cells_to_update.append(gspread.Cell(target_row, 11, item['KETERANGAN']))
+        
+        if cells_to_update:
+            ws.update_cells(cells_to_update, value_input_option='USER_ENTERED')
+        
         clear_cache()
         return {'success': True}
     except Exception as e:
