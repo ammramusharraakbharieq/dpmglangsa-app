@@ -8,11 +8,13 @@ Module untuk operasi CRUD dan integrasi cross-file di Google Sheets.
 import pandas as pd
 import streamlit as st
 import gspread
-from utils.data_loader import SPREADSHEET_NAME, get_gspread_client
+from utils.data_loader import SPREADSHEET_NAME, get_gspread_client, load_raw_data_from_sheet
 
 # We need to manually clear cache when updating data
 def clear_cache():
     st.cache_data.clear()
+    # Explicitly clear the loader cache to be safe
+    load_raw_data_from_sheet.clear()
 
 def get_worksheet(sheet_name):
     """Helper to get worksheet object"""
@@ -428,6 +430,40 @@ def update_perangkat_desa_all(desa, data_list):
         if updated_count == 0 and data_list:
              return {'success': False, 'message': 'Gagal mencocokkan data. Mohon validasi nama desa.'}
         
+        # VERIFICATION: Read back one value to ensure persistence
+        # This is critical for debugging why updates might fail silently
+        if row_map and updated_count > 0:
+            try:
+                # Pick the last item processed
+                last_item = data_list[-1]
+                target_no = str(last_item.get('NO_URUT')).strip()
+                if target_no.endswith(".0"): target_no = target_no[:-2]
+                res_row = row_map.get(target_no)
+                
+                if res_row:
+                    # Check a field that was updated
+                    check_field = 'NO_HP' if 'NO_HP' in last_item else ('NAMA_LENGKAP' if 'NAMA_LENGKAP' in last_item else None)
+                    
+                    if check_field:
+                         col_idx = field_col_map.get(check_field)
+                         expected_val = str(last_item[check_field])
+                         if expected_val.endswith(".0"): expected_val = expected_val[:-2]
+                         
+                         # Read back
+                         actual_val = str(ws.cell(res_row, col_idx).value).strip()
+                         if actual_val.endswith(".0"): actual_val = actual_val[:-2]
+                         
+                         print(f"VERIFY: Row {res_row} Col {col_idx} | Expected: '{expected_val}' | Actual: '{actual_val}'")
+                         
+                         # Check update success (allow loose match for now, just to log)
+                         if actual_val != expected_val and expected_val != 'None':
+                              print("WARNING: Verification Mismatch!")
+                              # Don't fail the whole user request yet, but log it.
+                              # Actually, fail it if we are sure?
+                              # Let's trust gspread for now but logging is key.
+            except Exception as e:
+                print(f"Verification Error: {e}")
+
         clear_cache()
         return {'success': True, 'updated': updated_count}
     except Exception as e:
