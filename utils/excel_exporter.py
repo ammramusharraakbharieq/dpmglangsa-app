@@ -140,52 +140,75 @@ class ExcelExporter:
 
 
     def export_perangkat_desa(self, df):
-        # USE NEW TEMPLATE (Created from User Upload)
-        filename = "template_perangkat_desa_new.xlsx"
-        wb = self._load_template(filename)
+        # PROGRAMMATIC GENERATION (Replacing Template)
+        # To ensure clean layout matching "Perangkat_Desa" Google Sheet structure
+        
+        wb = openpyxl.Workbook()
         ws = wb.active
+        ws.title = "Perangkat_Desa"
         
-        # Start Row usually 4 based on analysis of the new file
-        # (Row 1-3 are headers, Row 4 is header continuation)
-        # Data starts at Row 5.
-        start_row = 5
+        # --- STYLES ---
+        from openpyxl.styles import Font, Alignment, Border, Side, PatternFill
         
-        # Clear existing data in template (it has data!)
-        # Columns A to P (1 to 16)
-        self._clear_data(ws, start_row, 16)
+        bold_font = Font(bold=True, name='Arial', size=10)
+        center_align = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        left_align = Alignment(horizontal='left', vertical='center', wrap_text=True)
         
-        from openpyxl.cell import MergedCell
-        from openpyxl.styles import Alignment
+        thin_border = Border(left=Side(style='thin'), 
+                             right=Side(style='thin'), 
+                             top=Side(style='thin'), 
+                             bottom=Side(style='thin'))
+        
+        # --- HEADERS ---
+        # Based on Analysis of Google Sheet structure
+        
+        # Row 1-2: Main Titles (Merged)
+        ws.merge_cells('A1:P1')
+        ws['A1'] = "DATA KEPALA DESA DAN PERANGKAT DESA"
+        ws['A1'].font = Font(bold=True, size=14)
+        ws['A1'].alignment = center_align
+        
+        ws.merge_cells('A2:P2')
+        ws['A2'] = "PEMERINTAH KOTA LANGSA" 
+        ws['A2'].font = Font(bold=True, size=12)
+        ws['A2'].alignment = center_align
 
-        def safe_write(r, c, val):
-            """Helper to write to cell only if it's NOT a merged cell (read-only)"""
-            cell = ws.cell(row=r, column=c)
-            if isinstance(cell, MergedCell):
-                return # Skip writing to merged cells
-            cell.value = val
+        # Row 3: Column Headers
+        headers = [
+            "NO PROV", "PROVINSI", "NO KAB", "KABUPATEN / KOTA", 
+            "NO KEC", "KECAMATAN", "NO DESA", "DESA", 
+            "KATEGORI", "JENIS", "NO URUT", "NAMA LENGKAP", 
+            "NIK", "JENIS KELAMIN", "JABATAN", "NOMOR HP"
+        ]
+        
+        for col_num, header in enumerate(headers, 1):
+            cell = ws.cell(row=3, column=col_num)
+            cell.value = header
+            cell.font = bold_font
+            cell.alignment = center_align
+            cell.border = thin_border
+            # Add light gray background for headers
+            cell.fill = PatternFill(start_color="E0E0E0", end_color="E0E0E0", fill_type="solid")
 
-        # Mapping based on analysis of uploaded file:
-        # Col 1 (A): NO_PROV
-        # ... (same as before) ...
-        
-        current_row = start_row
-        last_desa = None
-        
-        # Grouping tracker: dictionary {desa_name: {'start': row, 'end': row}}
-        # usage: store start when new, update end every row
-        village_ranges = []
-        current_village_start = start_row
-        
-        # Sort by NO_KEC, NO_DESA, DESA, then NO_URUT
-        df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
-        
-        # KEY FIX: Filter out "Ghost Rows" 
+        # Row 4: Column Numbers (1-16)
+        for col_num in range(1, 17):
+            cell = ws.cell(row=4, column=col_num)
+            cell.value = col_num
+            cell.font = Font(italic=True, size=9)
+            cell.alignment = center_align
+            cell.border = thin_border
+
+        # --- DATA PREPARATION ---
+        # Filter "Ghost Rows" where Name and Jabatan are empty
         if 'NAMA_LENGKAP' in df.columns and 'JABATAN' in df.columns:
              name_str = df['NAMA_LENGKAP'].fillna('').astype(str).str.strip()
              jabatan_str = df['JABATAN'].fillna('').astype(str).str.strip()
              df = df[(name_str != '') | (jabatan_str != '')]
 
-        # Sort!
+        # Convert NO_URUT to numeric for sorting
+        df['NO_URUT_NUM'] = pd.to_numeric(df['NO_URUT'], errors='coerce')
+        
+        # Sort by Hierarchy: KEC -> DESA -> NO_URUT
         sort_cols = []
         if 'NO_KEC' in df.columns: sort_cols.append('NO_KEC')
         if 'NO_DESA' in df.columns: sort_cols.append('NO_DESA')
@@ -194,16 +217,21 @@ class ExcelExporter:
         
         df = df.sort_values(by=sort_cols)
         
-        # Reset last_desa to ensure first row triggers logic
+        # --- WRITE DATA ---
+        start_row = 5
+        current_row = start_row
+        
+        # Grouping Logic
         last_desa = None
+        village_ranges = []
+        current_village_start = start_row
         
         for index, row in df.iterrows():
             desa = row.get('DESA')
             
-            # Detect change
+            # Detect Village Change
             if desa != last_desa:
                 if last_desa is not None:
-                     # Close previous group
                      village_ranges.append({
                          'start': current_village_start,
                          'end': current_row - 1
@@ -211,76 +239,85 @@ class ExcelExporter:
                 current_village_start = current_row
                 last_desa = desa
                 
-                # Write Village Info ONLY on the first row of group (standard practice for merge)
-                safe_write(current_row, 1, row.get('NO_PROV'))
-                safe_write(current_row, 2, row.get('PROVINSI'))
-                safe_write(current_row, 3, row.get('NO_KAB'))
-                safe_write(current_row, 4, row.get('KABUPATEN'))
-                safe_write(current_row, 5, row.get('NO_KEC'))
-                safe_write(current_row, 6, row.get('KECAMATAN'))
-                safe_write(current_row, 7, row.get('NO_DESA'))
-                safe_write(current_row, 8, desa)
-            else:
-                 # Same village, continue. Columns 1-8 left empty for this row (will be merged later)
-                 pass
+                # Write Village Info (Cols 1-8) only on first row of group
+                ws.cell(row=current_row, column=1, value=row.get('NO_PROV'))
+                ws.cell(row=current_row, column=2, value=row.get('PROVINSI'))
+                ws.cell(row=current_row, column=3, value=row.get('NO_KAB'))
+                ws.cell(row=current_row, column=4, value=row.get('KABUPATEN'))
+                ws.cell(row=current_row, column=5, value=row.get('NO_KEC'))
+                ws.cell(row=current_row, column=6, value=row.get('KECAMATAN'))
+                ws.cell(row=current_row, column=7, value=row.get('NO_DESA'))
+                ws.cell(row=current_row, column=8, value=desa)
             
-            jabatan_raw = row.get('JABATAN')
-            if (pd.isna(jabatan_raw) or str(jabatan_raw).strip() == '') and \
-               (pd.isna(row.get('NAMA_LENGKAP')) or str(row.get('NAMA_LENGKAP')).strip() == ''):
-                 continue
-
-            jabatan = str(jabatan_raw).upper() if pd.notna(jabatan_raw) else ''
+            # Helper for Kategori (Col 9) and Jenis (Col 10)
+            jabatan = str(row.get('JABATAN', '')).upper()
+            kategori = 'B' # Default
+            jenis = 'Prangkat'
             
-            if 'KEPALA DESA' in jabatan or 'PJ. KEPALA DESA' in jabatan:
-                safe_write(current_row, 9, 'A')
-                safe_write(current_row, 10, 'Kades')
-            elif 'KADUS' in jabatan or 'KEPALA DUSUN' in jabatan:
-                safe_write(current_row, 9, 'B')
-                safe_write(current_row, 10, 'Prangkat')
-            else:
-                safe_write(current_row, 9, 'B')
-                safe_write(current_row, 10, 'Prangkat')
-
-            safe_write(current_row, 11, row.get('NO_URUT'))
-            safe_write(current_row, 12, row.get('NAMA_LENGKAP'))
+            if any(x in jabatan for x in ['KEPALA DESA', 'PJ. KEPALA DESA']):
+                kategori = 'A'
+                jenis = 'Kades'
             
-            nik = row.get('NIK')
-            safe_write(current_row, 13, str(nik) if pd.notna(nik) else '')
+            # Write row data
+            # If same village, Cols 1-8 are left empty (will be merged)
             
-            safe_write(current_row, 14, row.get('JENIS_KELAMIN'))
-            safe_write(current_row, 15, row.get('JABATAN'))
+            ws.cell(row=current_row, column=9, value=kategori)
+            ws.cell(row=current_row, column=10, value=jenis)
+            ws.cell(row=current_row, column=11, value=row.get('NO_URUT'))
+            ws.cell(row=current_row, column=12, value=row.get('NAMA_LENGKAP'))
             
-            hp = row.get('NO_HP')
-            safe_write(current_row, 16, str(hp) if pd.notna(hp) else '')
+            nik_val = row.get('NIK')
+            ws.cell(row=current_row, column=13, value=str(nik_val) if pd.notna(nik_val) else '')
+            
+            ws.cell(row=current_row, column=14, value=row.get('JENIS_KELAMIN'))
+            ws.cell(row=current_row, column=15, value=row.get('JABATAN'))
+            
+            hp_val = row.get('NO_HP')
+            ws.cell(row=current_row, column=16, value=str(hp_val) if pd.notna(hp_val) else '')
+            
+            # Apply Borders and Alignment to this row
+            for col in range(1, 17):
+                cell = ws.cell(row=current_row, column=col)
+                cell.border = thin_border
+                # Center align most cols, Left align Name and Jabatan if desired?
+                # For now match template: usually center or left. 
+                # Let's Center basic info, Left align Name/Jabatan
+                if col in [12, 15]: # Name, Jabatan
+                    cell.alignment = left_align
+                else:
+                    cell.alignment = center_align
 
             current_row += 1
-            
+
         # Append last group
         if last_desa is not None:
              village_ranges.append({
                  'start': current_village_start,
                  'end': current_row - 1
              })
-             
-        # --- POST-PROCESSING: APPLY MERGES ---
-        # Merge Cols 1-8 for each village group
+
+        # --- POST-PROCESSING: MERGE CELLS ---
         for grp in village_ranges:
             start = grp['start']
             end = grp['end']
-            if end > start: # Only merge if more than 1 row
+            
+            # Merge Cols 1-8 for the group
+            if end >= start: # Use >= so even single rows get processed (though merge start=end is no-op usually, alignment is key)
                 for col in range(1, 9): # Cols A-H
-                    try:
+                    if end > start:
                         ws.merge_cells(start_row=start, start_column=col, end_row=end, end_column=col)
-                        # Apply alignment
-                        cell = ws.cell(row=start, column=col)
-                        cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
-                    except Exception as e:
-                        print(f"Merge error at {start}-{end} col {col}: {e}")
-            elif end == start:
-                 # Single row, ensures alignment is still centered
-                 for col in range(1, 9):
-                     cell = ws.cell(row=start, column=col)
-                     cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+                    
+                    # Ensure alignment for the top-left cell of merge
+                    cell = ws.cell(row=start, column=col)
+                    cell.alignment = center_align
+        
+        # --- COLUMN WIDTHS (Auto-ish) ---
+        column_widths = [
+            10, 15, 10, 20, 12, 20, 15, 25, # 1-8
+            8, 10, 8, 35, 20, 12, 30, 18  # 9-16
+        ]
+        for i, width in enumerate(column_widths, 1):
+             ws.column_dimensions[openpyxl.utils.get_column_letter(i)].width = width
 
         output = BytesIO()
         wb.save(output)
